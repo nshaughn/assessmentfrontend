@@ -32,12 +32,12 @@ const UserModal = ({ setter, setToken, movieListState, setMovieListState, toggle
                         <Register />
                     </Modal>
                 </div>
+                    {/* {movieListState.map((movies, index) => (<div><h3 key={index}>Title: &nbsp;&nbsp;&nbsp;{movies.title}<br></br>Lead: &nbsp;&nbsp;&nbsp;{movies.actor}</h3></div>))} */}
             </div>
-            <div className="movieList">
-                <div className={toggle ? "showUser" : "hideUser"}>
-                    {movieListState.map((movies, index) => (<div><h3 key={index}>Title: &nbsp;&nbsp;&nbsp;{movies.title}<br></br>Lead: &nbsp;&nbsp;&nbsp;{movies.actor}</h3></div>))}
-                </div>
-            </div>
+            {/* <div className="movieList"> */}
+                {/* <div className={toggle ? "showUser" : "hideUser"}> */}
+                {/* </div> */}
+            {/* </div> */}
         </div>
     )
 }
