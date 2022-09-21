@@ -4,9 +4,6 @@ import { useState, useEffect } from "react";
 import UserModal from "./components/UserModal";
 import AccountModal from "./components/AccountModal";
 import FruitCard from "./components/FruitCard";
-// import SearchIcon from "./search.svg"
-
-
 
 const App = () => {
 
