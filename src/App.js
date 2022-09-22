@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
+
+import "./stylesheets/kurtiscss_main.css"
+import { faker } from '@faker-js/faker';
+
 // import "./App.css"
-// import { faker } from '@faker-js/faker';
+
 import UserModal from "./components/UserModal";
 import AccountModal from "./components/AccountModal";
 import FruitCard from "./components/FruitCard";
+
 
 const App = () => {
 
@@ -12,7 +17,6 @@ const App = () => {
   const [user, setUser] = useState()
   const [token, setToken] = useState("")
   const [toggle, setToggle] = useState(false);
-
   useEffect (() => {
     fetchFruit()
   },[])
@@ -37,25 +41,33 @@ const App = () => {
       return <h1>{errorMsg}</h1>
     }
   
+
   return (
-    <div className="main">
-      <div className="contrast">
+
+      <div className="master">
         {!user ?
           <>
-            <h1 className="title">Smooth(ie) API</h1>
-            <br></br>
-            <br></br>
-            <h2>log-in to create your smoothie!</h2>
-            <div>
-              <UserModal setter={setUser} setToken={setToken} toggle={toggle} setToggle={setToggle} />
-              <br></br>
-            </div>
+
+            <div className="header_bar">
+                <UserModal setter={setUser} setToken={setToken} toggle={toggle} setToggle={setToggle} />
+              {/* <div className="login"><a href="">Login</a> <a href="">Register</a></div> */}
+              <img className="logo_img" src={require("./images/smoothie_logo_v1.png")} />
+
+
+            </div>     
+
+              <h1 className="title">Smooth(ie) API</h1>
+    
+              <h2>log-in to create your smoothie!</h2>
+              <div>
+  
+              </div>
+
           </>
           :
           <>
             <h1 className="title">Smooth(ie) API Menu</h1>
-            <br></br>
-            <br></br>
+
             <h2>User: {user} is logged in</h2>
 
             {fruits?.length > 0 ? (
@@ -78,8 +90,37 @@ const App = () => {
           </>}
 
       </div>
-    </div>
+
   )
+  //   <div className="main">
+  //     <div className="contrast">
+  //       {!user ?
+  //         <>
+  //           <h1 className="title">Smooth(ie) API</h1>
+  //           <br></br>
+  //           <br></br>
+  //           <h2>log-in to create your smoothie!</h2>
+  //           <div>
+  //             <UserModal setter={setUser} setToken={setToken} toggle={toggle} setToggle={setToggle} />
+  //             <br></br>
+  //           </div>
+  //         </>
+  //         :
+  //         <>
+  //           <h1 className="title">Smooth(ie) API Menu</h1>
+  //           <br></br>
+  //           <br></br>
+  //           <h2>User: {user} is logged in</h2>
+  //           <div className="navDiv">
+  //             <div id="manageNav">
+  //               <AccountModal token={token} />
+  //             </div>
+  //           </div>
+  //         </>}
+
+  //     </div>
+  //   </div>
+  // )
 }
 
 export default App;
