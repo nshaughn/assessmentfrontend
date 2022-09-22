@@ -3,7 +3,7 @@
 
 * {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    
+    margin: 0px;
 };
 
 /* Not used in my personal code, but for some reason is required for the rest to work */
@@ -52,7 +52,7 @@ h1 {
     right: 100px;
     position: absolute;
     width: 200px;
-    border: solid red;
+
     text-align: center;
 
 }
@@ -62,8 +62,8 @@ h1 {
     text-decoration: none;
     padding: 5px;
     width: 5em;
-    border: solid green;
-    width: 3000px;
+
+    
 }
 
 .login a:hover{
