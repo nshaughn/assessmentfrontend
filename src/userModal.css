@@ -5,11 +5,14 @@
 .modalBox button {
     width: 10vw;
     height: 5vh;
+margin: 10px;
 }
 
 #login {
-    border-radius: 50px 0px 0px 50px;
+    color: white;
+    border-radius: 50px;
     box-shadow: -1px 2px 1px rgb(0, 0, 0);
+    background: linear-gradient(180deg, #4cc9f0 50%, #f72585 100%);
 }
 #login:active {
     box-shadow: 0 0 0 rgb(0, 0, 0);
@@ -17,8 +20,10 @@
 }
 
 #register {
-    border-radius: 0px 50px 50px 0px;
+    color: white;
+    border-radius: 50px;
     box-shadow: 1px 2px 1px rgb(0, 0, 0);
+    background: linear-gradient(180deg, #4cc9f0 50%, #f72585 100%);
 }
 #register:active {
     box-shadow: 0 0 0 rgb(0, 0, 0);
