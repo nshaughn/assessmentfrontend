@@ -41,6 +41,8 @@ h1 {
     height: 140px;
     margin-top: -20px;
     float: left;
+    /* animation: rainbow 20s infinite;
+    border-radius: 25px; */
 }
 
 
@@ -76,13 +78,64 @@ h1 {
 .selectionCont {
     display: flex;
     width: 100vw;
-    justify-content: space-around;
+    justify-content: space-evenly;
     /* border: solid pink; */
 }
 
 .selectionBoxes {
     height: 50vh;
-    width: 40%;
+    width: 45%;
     overflow: scroll;
     border: solid green;
 }
+
+.offers {
+ display: flex;
+ justify-content: space-around;
+ width: 100vw;
+ height: 20vh;
+}
+
+.box {
+    border: solid green;
+    width: 30%; 
+}
+
+/* @keyframes rainbow{
+    100%,0%{
+        background-color: rgba(117, 0, 0);
+    }
+    8%{
+        background-color: rgba(106, 53, 1);
+    }
+    16%{
+        background-color: rgba(94, 94, 1);
+    }
+    25%{
+        background-color: rgba(50, 99, 0);
+    }
+    33%{
+        background-color: rgba(0, 96, 0);
+    }
+    41%{
+        background-color: rgba(0, 89, 45);
+    }
+    50%{
+        background-color: rgba(0, 90, 90);
+    }
+    58%{
+        background-color: rgba(0, 46, 91);
+    }
+    66%{
+        background-color: rgba(0, 0, 90);
+    }
+    75%{
+        background-color: rgba(44, 0, 87);
+    }
+    83%{
+        background-color: rgba(86, 0, 86);
+    }
+    91%{
+        background-color: rgba(79, 0, 40);
+    }
+} */
