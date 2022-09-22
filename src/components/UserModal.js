@@ -16,9 +16,9 @@ const UserModal = ({ setter, setToken, movieListState, setMovieListState, toggle
 
     return (
         <div>
-            <div className="modalBox">
+            <div className="login">
                 <div>
-                    <button onClick={openLoginModal} id="login">Log-in</button>
+                   <div><a onClick={openLoginModal}  href="">Login</a> <a onClick={openRegisterModal}  href="">Register</a> </div>
                     <Modal isOpen={loginStateModal} onRequestClose={closeLoginModal} className="modalContent" contentLabel="Example Modal" overlayClassName="modalZ">
                         <Login setter={setter} setToken={setToken} />
                     </Modal>
@@ -27,7 +27,7 @@ const UserModal = ({ setter, setToken, movieListState, setMovieListState, toggle
                     <DisplayMovies movieListState={movieListState} setMovieListState={setMovieListState} toggle={toggle} setToggle={setToggle} />
                 </div> */}
                 <div>
-                    <button onClick={openRegisterModal} id="register">Register</button>
+                <div></div>
                     <Modal isOpen={registerStateModal} onRequestClose={closeRegisterModal} className="modalContent" contentLabel="Example Modal" overlayClassName="modalZ">
                         <Register />
                     </Modal>
