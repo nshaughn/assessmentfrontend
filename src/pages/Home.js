@@ -23,6 +23,11 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                     {!user ?<div className="login"><a onClick={openLoginModal}>Login</a> <a onClick={openRegisterModal}>Register</a></div>:''}
                 </div>
                 <h1 className="title">Smooth(ie) API</h1>
+                <div className='offers'>
+                    <div className='box'></div>
+                    <div className='box'></div>
+                    <div className='box'></div>
+                </div>
                 {!user ?
                     <>
                         <UserModal setter={setUser} setToken={setToken} toggle={toggle} setToggle={setToggle} loginStateModal={loginStateModal} 

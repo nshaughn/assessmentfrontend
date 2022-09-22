@@ -34,7 +34,7 @@ function Sidebar({})
         <div className={sidebar ? 'fixMeDaddy somethingElse' : 'fixMeDaddy'}>
             <button className="basket" onClick={showSidebar}>
                         <BasketDiv>
-                            Checkout Basket&nbsp;&nbsp;
+                            {/* Checkout Basket&nbsp;&nbsp; */}
                             <AiIcons.AiOutlineShoppingCart className='cart-icon'/>
                         </BasketDiv>
             </button>
