@@ -1,24 +1,20 @@
-import React from 'react'
+import React from 'react';
+import { faker } from '@faker-js/faker';
 
-const FruitCard = ({fruit: { nutritions: {calories, protein, sugar}, name, id, family, genus } })=>{
+const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name, id, price } }) => {
+    price = Math.ceil(faker.datatype.number() / 10000)
     return (
-        <div className='fruit' key={id}>
-                <div>
-                    <h1>{name}</h1>
-                    <p>Calories: {calories}</p>
-                    <p>Protein: {protein}</p>
-                    <p>Sugar: {sugar}</p>
-                </div> 
-
-                <div>
-                    <h2>{family}</h2>
-                </div>
-
-                <div>
-                    <p>{genus}</p>
+        <div>
+                <div className='fruit' key={id}>
+                    <div>
+                        <h1>{name}</h1>
+                        <p>Calories: {calories}kcal</p>
+                        <p>Protein: {protein}g</p>
+                        <p>Sugar: {sugar}g</p>
+                        <p>Price per portion: £{price}</p>
+                    </div>
                 </div>
         </div>
-
     )
 }
 

@@ -1,14 +1,9 @@
-import { useState, useEffect } from "react";
-
-import "./stylesheets/kurtiscss_main.css"
-import { faker } from '@faker-js/faker';
-
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Checkout from './pages/Checkout';
+import Home from './pages/Home';
 // import "./App.css"
-
-import UserModal from "./components/UserModal";
-import AccountModal from "./components/AccountModal";
-import FruitCard from "./components/FruitCard";
-
+import "./stylesheets/kurtiscss_main.css"
 
 const App = () => {
 
@@ -17,10 +12,11 @@ const App = () => {
   const [user, setUser] = useState()
   const [token, setToken] = useState("")
   const [toggle, setToggle] = useState(false);
-  useEffect (() => {
+
+  useEffect(() => {
     fetchFruit()
-  },[])
-  
+  }, [])
+
       const fetchFruit = async () => {
         try {
           setErrorMsg('');
@@ -35,92 +31,48 @@ const App = () => {
         } catch (error) {
           setErrorMsg('Oops, something went wrong')
         }
-      };
+      };      
   
-    if (errorMsg !== '') {
-      return <h1>{errorMsg}</h1>
-    }
-  
+  if (errorMsg !== '') {
+    return <h1>{errorMsg}</h1>
+  }
 
-  return (
+//   <div className="master">
+//         {!user ?
+//           <>
 
-      <div className="master">
-        {!user ?
-          <>
-
-            <div className="header_bar">
-                <UserModal setter={setUser} setToken={setToken} toggle={toggle} setToggle={setToggle} />
-              {/* <div className="login"><a href="">Login</a> <a href="">Register</a></div> */}
-              <img className="logo_img" src={require("./images/smoothie_logo_v1.png")} />
+//             <div className="header_bar">
+//                 <UserModal setter={setUser} setToken={setToken} toggle={toggle} setToggle={setToggle} />
+//               {/* <div className="login"><a href="">Login</a> <a href="">Register</a></div> */}
+//               <img className="logo_img" src={require("./images/smoothie_logo_v1.png")} />
 
 
-            </div>     
+//             </div>     
 
-              <h1 className="title">Smooth(ie) API</h1>
+//               <h1 className="title">Smooth(ie) API</h1>
     
-              <h2>log-in to create your smoothie!</h2>
-              <div>
+//               <h2>log-in to create your smoothie!</h2>
+//               <div>
   
-              </div>
+//               </div>
 
-          </>
-          :
-          <>
-            <h1 className="title">Smooth(ie) API Menu</h1>
+//           </>
+//           :
+//           <>
+//             <h1 className="title">Smooth(ie) API Menu</h1>
 
-            <h2>User: {user} is logged in</h2>
-
-            {fruits?.length > 0 ? (
-              <div>
-                {fruits.map((fruit) => (
-                  <FruitCard fruit={fruit} />
-                ))}
-              </div>
-            ) : (
-              <div>
-                <h1>NO FRUIT!!!!!!!!</h1>
-              </div>
-            )}
-
-            <div className="navDiv">
-              <div id="manageNav">
-                <AccountModal token={token} />
-              </div>
-            </div>
-          </>}
-
-      </div>
-
-  )
-  //   <div className="main">
-  //     <div className="contrast">
-  //       {!user ?
-  //         <>
-  //           <h1 className="title">Smooth(ie) API</h1>
-  //           <br></br>
-  //           <br></br>
-  //           <h2>log-in to create your smoothie!</h2>
-  //           <div>
-  //             <UserModal setter={setUser} setToken={setToken} toggle={toggle} setToggle={setToggle} />
-  //             <br></br>
-  //           </div>
-  //         </>
-  //         :
-  //         <>
-  //           <h1 className="title">Smooth(ie) API Menu</h1>
-  //           <br></br>
-  //           <br></br>
-  //           <h2>User: {user} is logged in</h2>
-  //           <div className="navDiv">
-  //             <div id="manageNav">
-  //               <AccountModal token={token} />
-  //             </div>
-  //           </div>
-  //         </>}
-
-  //     </div>
-  //   </div>
-  // )
+//             <h2>User: {user} is logged in</h2>
+  
+  return (
+    <div className="main">
+      <Router>
+        <Routes>
+          <Route path='/' exact element={<Home user={user} setUser={setUser} token={token} setToken={setToken} toggle={toggle} setToggle={setToggle} fruits={fruits} />} />
+          <Route path='/checkout' element={<Checkout />} />
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
