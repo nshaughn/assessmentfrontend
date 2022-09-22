@@ -1,0 +1,88 @@
+@import url("./kurtis_userModal.css");
+@import url("./kurtiscc_variables.css");
+
+* {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0px;
+};
+
+/* Not used in my personal code, but for some reason is required for the rest to work */
+.main {
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    border: solid black; 
+}
+/* End of "required" code. */
+
+.master {
+    background-image: linear-gradient(to bottom right, #3a343a, #241f24);
+    height: 100vh;
+    width: 100vw;
+}
+
+h1 {
+    color: red;
+    
+}
+
+.header_bar {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    padding: 10px;
+    margin: auto;
+    height: 100px;
+    border: var(--borders_main);
+    background-image: linear-gradient(to top, #400a5f, #2c0642);
+}
+
+.logo_img {
+    height: 140px;
+    margin-top: -20px;
+    float: left;
+}
+
+
+.login {
+    background-image: linear-gradient(to bottom, #3c1372, #591ea5);
+    float: right;
+    padding: 10px;
+    text-decoration: none;
+    align-self: flex-end;
+    height: 20%;
+    /* opacity: 0.9; */
+    text-align: center;
+    /* top: 70px;
+    right: 100px; */
+    /* position: absolute; */
+    width: 200px;
+
+}
+
+.login a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    width: 5em;
+
+    
+}
+
+.login a:hover{
+    background-image: linear-gradient(to bottom, #4d1b8f, #6723c0);
+}
+
+.selectionCont {
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+    /* border: solid pink; */
+}
+
+.selectionBoxes {
+    height: 50vh;
+    width: 40%;
+    overflow: scroll;
+    border: solid green;
+}
