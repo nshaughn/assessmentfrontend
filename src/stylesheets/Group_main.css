@@ -136,7 +136,7 @@ p {
 
 .fruit:hover {
     background-color: red;
-    cursor: pointer;
+    cursor: default;
 
     background: linear-gradient(270deg, #5c3069, #784a89);
     background-size: 400% 400%;
@@ -165,6 +165,15 @@ p {
     background-color: #3e0449;
     font-size: 14pt;
     margin-left: 50px;
+    cursor: pointer;
+}
+
+.fruit_price:hover {
+    background-image: linear-gradient(to bottom right, #57208b, #2560a3);
+}
+
+.fruit_price:active {
+    transform: translateY(2px);
 }
 
 .container_headers {
