@@ -1,35 +1,43 @@
 .offers_container {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: var(--page_width);
     background-image: linear-gradient(to bottom right, #3d033a, #1f031d);
     margin: auto;
-    padding-top: 50px;
+    /* padding-top: 50px; */
     padding: 10px;
-    min-height: 180px;
-    box-shadow: var(--shadow_main)
-   }
-   
-   .offers {
-       border: var(--borders_sub);
-       width: 30%; 
-   }
-   
-   .smoothie_image {
-       height: 100%;
-       display: inline-block;
-   }
-   
-   .offers_container {
-        height: 100%;
+    height: 20vh;
+    box-shadow: var(--shadow_main);
+    /* border: solid green; */
+    text-align: center;
+}
 
-   }
-   
-   .offers {
-    cursor: pointer;
-    background-image: linear-gradient(to bottom right, #410e3c, #4b0461);
-    box-shadow: var(--shadow_sub);
-   }
+.imgCont {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 80%;
+}
+
+.smoothie_image {
+     /* height: 100%;
+     width:100%; */
+     height: 140px;
+     margin-top: -20px;
+}
+
+.offers {
+     display: flex;
+     flex-direction: column;
+     border: var(--borders_sub);
+     width: 30%; 
+     height: 95%;
+     cursor: pointer;
+     /* overflow: hidden; */
+     background-image: linear-gradient(to bottom right, #410e3c, #4b0461);
+     box-shadow: var(--shadow_sub);
+}
 
    .offers:hover {
         animation: hoverOver 4s ease infinite;

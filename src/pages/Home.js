@@ -12,61 +12,71 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
     function openRegisterModal() { showRegisterStateModal(true); }
     function closeLoginModal() { showLoginStateModal(false); }
     function closeRegisterModal() { showRegisterStateModal(false); }
-    
+
     return (
 
-            <div className="master">
-                <div className="header_bar">
-                    <img className="logo_img" src={require("../images/smoothie_logo_v1.png")} alt='logo' />
-                        <div className="highZ">
-                            <Sidebar />
-                        </div>
-                    {!user ?<div className="login"><div>                        
-                        
+        <div className="master">
+            <div className="header_bar">
+                <img className="logo_img" src={require("../images/smoothie_logo_v1.png")} alt='logo' />
+                <div className="highZ">
+                    <Sidebar />
+                </div>
+                {!user ? <div className="login"><div>
+
                     <p>Log-in to create your smoothie!</p>
                     <a onClick={openLoginModal}>Login</a> <a onClick={openRegisterModal}>Register</a>
-                    
-                    </div></div>
-                    
+
+                </div></div>
+
                     :
-                    
+
                     <div className="login"><p>Welcome, {user}! </p>
-                    <a>Manage account</a>
-                    </div> }
-                </div>
-                {/* <h1 className="title">Smooth(ie) API</h1> */}
-                <div className='offers_container'>
-                    <div className='offers'>
+                        <a>Manage account</a>
+                    </div>}
+            </div>
+
+            <div className='offers_container'>
+                
+                <div className='offers'>
+                    <h1>Special Offer</h1>
+                    <div className='imgCont'>
                         <img className="smoothie_image" src={require("../images/smoothie_logo_v1.png")} alt='logo' />
-                        <div className="smoothie_offer_container">
-                            <h1>Special Offer</h1>
-
-                        </div>
-
                     </div>
-
-
-
-                    <div className='offers'></div>
-                    <div className='offers'></div>
                 </div>
-                {!user ?
-                    <>
-                        <UserModal setter={setUser} setToken={setToken} toggle={toggle} setToggle={setToggle} loginStateModal={loginStateModal} 
-                        registerStateModal={registerStateModal} showRegisterStateModal={showRegisterStateModal} closeLoginModal={closeLoginModal} 
+                
+                <div className='offers'>
+                    <h1>Special Offer</h1>
+                    <div className='imgCont'>
+                        <img className="smoothie_image" src={require("../images/smoothie_logo_v1.png")} alt='logo' />
+                    </div>
+                </div>
+                
+                <div className='offers'>
+                    <h1>Special Offer</h1>
+                    <div className='imgCont'>
+                        <img className="smoothie_image" src={require("../images/smoothie_logo_v1.png")} alt='logo' />
+                    </div>
+                </div>
+                
+            </div>
+            {!user ?
+                <>
+                    <UserModal setter={setUser} setToken={setToken} toggle={toggle} setToggle={setToggle} loginStateModal={loginStateModal}
+                        registerStateModal={registerStateModal} showRegisterStateModal={showRegisterStateModal} closeLoginModal={closeLoginModal}
                         closeRegisterModal={closeRegisterModal} />
 
-                        <div>
-                        </div>
-                    </>
-                    :
-                    <>
+                    <div>
+                    </div>
+                </>
+                :
+                <>
 
-                        <div className='selectionCont'>
+                    <div className='selectionCont'>
+                        <div className='innerCont'>
+                            <div className="container_headers"><p>Click the ingredient to build your smoothie:</p></div>
                             <div className='selectionBoxes'>
                                 {fruits?.length > 0 ? (
                                     <div>
-                                <div className="container_headers"><p>Click the ingredient to build your smoothie:</p></div>
                                         {fruits.map((fruit) => (
                                             <FruitCard fruit={fruit} />
                                         ))}
@@ -77,17 +87,20 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                                     </div>
                                 )}
                             </div>
-                            <div className='selectionBoxes'>
+                        </div>
+                        <div className='innerCont'>
                             <div className="container_headers"><p>Your smoothie:</p></div>
+                            <div className='selectionBoxes'>
                             </div>
                         </div>
-                        {/* <div className="navDiv">
+                    </div>
+                    {/* <div className="navDiv">
                             <div id="manageNav">
                                 <AccountModal token={token} />
                             </div>
                         </div> */}
-                    </>}
-            </div>
+                </>}
+        </div>
 
     )
 }
