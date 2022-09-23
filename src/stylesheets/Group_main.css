@@ -161,13 +161,27 @@ p {
 
 .fruit_price {
     align-self: center;
-    min-width: 200px;
+    min-width: 250px;
     text-align: center;
-    padding: 10px;
+    padding: 0px 10px 0px 10px;
     background-color: #3e0449;
-    font-size: 14pt;
+    font-size: 1em;
     margin-left: 50px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.hulk {
+    color: green;
+    font-weight: bolder;
+    font-size: 2em;
+}
+
+.fruit_price:hover .hulk {
+    animation: grow 0.5s infinite;
 }
 
 .fruit_price:hover {
@@ -190,6 +204,12 @@ p {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
+}
+
+@keyframes grow {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); }
 }
 
 

@@ -19,7 +19,8 @@ const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name, id
 
 
                     <div className='fruit_price'>
-                        <p>Price per portion: <b>£{price} </b></p>
+                        <p>Price per portion: <b>£{price}</b></p>
+                        <p className='hulk'>⇨</p>
                     </div>
 
                 </div>
