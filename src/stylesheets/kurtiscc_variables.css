@@ -2,4 +2,14 @@
     --borders_main: #9c10a5 solid 1px;
     --borders_sub: #780d80 solid 1px;
     
+    
+    --p_text_color: #efd4f3;
+
+    --h1_text_color: #d66faf;
+
+    --shadow_main: 1px 1px 39px -2px rgba(0,0,0,0.83);
+    --shadow_sub: -1px 1px 13px 4px rgba(0,0,0,0.2);
+
+    --page_width: 90%;
 }
+

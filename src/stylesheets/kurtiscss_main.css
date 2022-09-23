@@ -1,8 +1,9 @@
 @import url("./kurtis_userModal.css");
 @import url("./kurtiscc_variables.css");
+@import url("./smoothie_offers.css");
 
 * {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0px;
 };
 
@@ -16,126 +17,188 @@
 /* End of "required" code. */
 
 .master {
-    background-image: linear-gradient(to bottom right, #3a343a, #241f24);
+    background: linear-gradient(-10deg, #110520 18%, rgba(51,7,113,1) 100%);
+
     height: 100vh;
     width: 100vw;
 }
 
 h1 {
-    color: red;
+    color: var(--h1_text_color);
     
+}
+
+h2 {
+    color: var(--h1_text_color);
+    
+}
+
+p {
+    color: var(--p_text_color)
 }
 
 .header_bar {
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    width: var(--page_width);
     padding: 10px;
     margin: auto;
     height: 100px;
-    border: var(--borders_main);
     background-image: linear-gradient(to top, #400a5f, #2c0642);
+
+    box-shadow: var(--shadow_main);
+
+
 }
 
 .logo_img {
     height: 140px;
     margin-top: -20px;
     float: left;
-    /* animation: rainbow 20s infinite;
-    border-radius: 25px; */
+
 }
 
 
 .login {
     background-image: linear-gradient(to bottom, #3c1372, #591ea5);
+    color: var(--p_text_color);
     float: right;
-    padding: 10px;
+    padding: 5px;
     text-decoration: none;
     align-self: flex-end;
     height: 20%;
-    /* opacity: 0.9; */
+    opacity: 0.9;
     text-align: center;
-    /* top: 70px;
-    right: 100px; */
-    /* position: absolute; */
-    width: 200px;
-
+    min-width: 250px;
+    height: max-content;
+       box-shadow: var(--shadow_sub)
 }
 
 .login a {
     color: white;
-    text-decoration: none;
-    padding: 5px;
-    width: 5em;
+    min-width: 100px;
+    display: inline-block;
+    padding: 8px;
+    background-image: linear-gradient(to bottom, #014d1e, #006627);
+    border-bottom: var(--borders_sub);
 
-    
+}
+
+.login p {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .login a:hover{
-    background-image: linear-gradient(to bottom, #4d1b8f, #6723c0);
+    background-image: linear-gradient(to bottom, #6723c0, #4d1b8f);
+    cursor: pointer;
+    border-bottom: var(--borders_sub);
+    animation: hoverOver 4s ease infinite;
 }
 
 .selectionCont {
     display: flex;
-    width: 100vw;
     justify-content: space-evenly;
-    /* border: solid pink; */
+    width: var(--page_width);
+    padding: 10px;
+    margin: auto;
+    background-image: linear-gradient(to bottom left, #3d033a, #3d033a);
+    box-shadow: var(--shadow_main)
 }
 
 .selectionBoxes {
     height: 50vh;
-    width: 45%;
-    overflow: scroll;
-    border: solid green;
+    width: 47.3%;
+    overflow: auto;
+    border: var(--borders_sub);
+}
+
+.offers_container {
+ display: flex;
+ justify-content: space-around;
+ width: var(--page_width);
+ background-image: linear-gradient(to bottom right, #3d033a, #1f031d);
+ margin: auto;
+ padding-top: 50px;
+ padding: 10px;
+ height: 20vh;
+ box-shadow: var(--shadow_main)
 }
 
 .offers {
- display: flex;
- justify-content: space-around;
- width: 100vw;
- height: 20vh;
-}
-
-.box {
-    border: solid green;
+    border: var(--borders_sub);
     width: 30%; 
 }
 
-/* @keyframes rainbow{
-    100%,0%{
-        background-color: rgba(117, 0, 0);
-    }
-    8%{
-        background-color: rgba(106, 53, 1);
-    }
-    16%{
-        background-color: rgba(94, 94, 1);
-    }
-    25%{
-        background-color: rgba(50, 99, 0);
-    }
-    33%{
-        background-color: rgba(0, 96, 0);
-    }
-    41%{
-        background-color: rgba(0, 89, 45);
-    }
-    50%{
-        background-color: rgba(0, 90, 90);
-    }
-    58%{
-        background-color: rgba(0, 46, 91);
-    }
-    66%{
-        background-color: rgba(0, 0, 90);
-    }
-    75%{
-        background-color: rgba(44, 0, 87);
-    }
-    83%{
-        background-color: rgba(86, 0, 86);
-    }
-    91%{
-        background-color: rgba(79, 0, 40);
-    }
-} */
+.smoothie_image {
+    height: 100%;
+    float: left;
+}
+
+.smoothie_offer_container {
+    float:right;
+}
+
+
+
+.fruit {
+    background-color: rgba(214, 186, 207,0.2);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: solid black 1px;
+}
+
+.fruit:hover {
+    background-color: red;
+    cursor: pointer;
+
+    background: linear-gradient(270deg, #5c3069, #784a89);
+    background-size: 400% 400%;
+
+    animation: hoverOver 4s ease infinite;
+}
+
+.fruit_makeup {
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+.fruit h1 {
+    width: 220px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+
+.fruit_price {
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 200px;
+    text-align: center;
+    padding: 10px;
+    background-color: #3e0449;
+    font-size: 14pt;
+    margin-left: 50px;
+}
+
+
+@keyframes hoverOver {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
+
+
+
+
+.container_headers {
+    font-weight: bold;
+    padding: 10px;
+    background-color: rgb(51, 9, 49);
+}

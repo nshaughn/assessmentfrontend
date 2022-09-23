@@ -1,0 +1,49 @@
+.offers_container {
+    display: flex;
+    justify-content: space-around;
+    width: var(--page_width);
+    background-image: linear-gradient(to bottom right, #3d033a, #1f031d);
+    margin: auto;
+    padding-top: 50px;
+    padding: 10px;
+    min-height: 180px;
+    box-shadow: var(--shadow_main)
+   }
+   
+   .offers {
+       border: var(--borders_sub);
+       width: 30%; 
+   }
+   
+   .smoothie_image {
+       height: 100%;
+       display: inline-block;
+   }
+   
+   .offers_container {
+        height: 100%;
+
+   }
+   
+   .offers {
+    cursor: pointer;
+    background-image: linear-gradient(to bottom right, #410e3c, #4b0461);
+    box-shadow: var(--shadow_sub);
+   }
+
+   .offers:hover {
+        animation: hoverOver 4s ease infinite;
+
+
+   }
+
+   .offers h1 {
+        display: inline-block;
+        padding: 5px;
+
+        font-size: 16pt;
+        width: 100%;
+
+
+   }
+
