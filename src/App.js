@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Checkout from './pages/Checkout';
 import Home from './pages/Home';
-// import "./App.css"
-// import "./stylesheets/kurtiscss_main.css"
+// import "./stylesheets/App.css"
+// import "./stylesheets/Group_main.css"
 
 const App = () => {
 
