@@ -31,11 +31,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, userN
                     :
 
                     <div className="login"><p>Welcome, {user}! </p>
-                        {/* <div className="navDiv">
-                            <div id="manageNav"> */}
                                 <AccountModal token={token} />
-                            {/* </div>
-                        </div> */}
                     </div>}
             </div>
 
