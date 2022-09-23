@@ -114,32 +114,6 @@ p {
     border: var(--borders_sub);
 }
 
-.offers_container {
- display: flex;
- justify-content: space-around;
- width: var(--page_width);
- background-image: linear-gradient(to bottom right, #3d033a, #1f031d);
- margin: auto;
- padding-top: 50px;
- padding: 10px;
- height: 20vh;
- box-shadow: var(--shadow_main)
-}
-
-.offers {
-    border: var(--borders_sub);
-    width: 30%; 
-}
-
-.smoothie_image {
-    height: 100%;
-    float: left;
-}
-
-.smoothie_offer_container {
-    float:right;
-}
-
 
 
 .fruit {
