@@ -5,7 +5,7 @@ import * as AiIcons from "react-icons/ai";
 import { Link } from 'react-router-dom';
 // import SideBarCheckout from './SideBarCheckout';
 
-import "../Sidebar.css"
+import "../stylesheets/Sidebar.css"
 
 function Sidebar({})
 {

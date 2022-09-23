@@ -1,5 +1,5 @@
-@import url("./kurtis_userModal.css");
-@import url("./kurtiscc_variables.css");
+@import url("./Group_userModal.css");
+@import url("./Group_variables.css");
 @import url("./smoothie_offers.css");
 
 * {
@@ -138,7 +138,7 @@ p {
 
 .fruit:hover {
     background-color: red;
-    cursor: pointer;
+    cursor: default;
 
     background: linear-gradient(270deg, #5c3069, #784a89);
     background-size: 400% 400%;
@@ -167,6 +167,15 @@ p {
     background-color: #3e0449;
     font-size: 14pt;
     margin-left: 50px;
+    cursor: pointer;
+}
+
+.fruit_price:hover {
+    background-image: linear-gradient(to bottom right, #57208b, #2560a3);
+}
+
+.fruit_price:active {
+    transform: translateY(2px);
 }
 
 .container_headers {

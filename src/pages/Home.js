@@ -3,7 +3,7 @@ import UserModal from "../components/UserModal";
 import AccountModal from "../components/AccountModal";
 import FruitCard from "../components/FruitCard";
 import Sidebar from '../components/Sidebar';
-import "../stylesheets/kurtiscss_main.css";
+import "../stylesheets/Group_main.css";
 
 function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, userName }) {
     const [loginStateModal, showLoginStateModal] = useState(false)
