@@ -15,8 +15,8 @@ const AccountModal = ({token}) => {
     const [toggle, setToggle] = useState(false);
 
     return (
-        <div className="imageBox">
-            <button onClick={openAccountModal} id="account">Manage account</button>
+        <div>
+            <a onClick={openAccountModal} id="account">Manage account</a>
             <Modal isOpen={accountStateModal} onRequestClose={closeAccountModal} className="modalContent" contentLabel="Example Modal" overlayClassName="modalZ">
                 <div className="outerUserList">
                 <DisplayUsers wide={toggle} setWide={setToggle}/>

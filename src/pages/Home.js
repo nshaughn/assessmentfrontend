@@ -5,7 +5,7 @@ import FruitCard from "../components/FruitCard";
 import Sidebar from '../components/Sidebar';
 import "../stylesheets/kurtiscss_main.css";
 
-function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
+function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, userName }) {
     const [loginStateModal, showLoginStateModal] = useState(false)
     const [registerStateModal, showRegisterStateModal] = useState(false)
     function openLoginModal() { showLoginStateModal(true); }
@@ -31,7 +31,11 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                     :
 
                     <div className="login"><p>Welcome, {user}! </p>
-                        <a>Manage account</a>
+                        {/* <div className="navDiv">
+                            <div id="manageNav"> */}
+                                <AccountModal token={token} />
+                            {/* </div>
+                        </div> */}
                     </div>}
             </div>
 
@@ -94,11 +98,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                             </div>
                         </div>
                     </div>
-                    {/* <div className="navDiv">
-                            <div id="manageNav">
-                                <AccountModal token={token} />
-                            </div>
-                        </div> */}
+                    {/*  */}
                 </>}
         </div>
 

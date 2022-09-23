@@ -70,7 +70,9 @@ p {
     text-align: center;
     min-width: 250px;
     height: max-content;
-    box-shadow: var(--shadow_sub)
+    box-shadow: var(--shadow_sub);
+    display: flex;
+    align-items: center;
 }
 
 .login a {
@@ -180,3 +182,5 @@ p {
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
+
+
