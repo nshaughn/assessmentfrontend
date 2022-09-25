@@ -1,3 +1,14 @@
+All images in the home screen before log-in were taken from https://unsplash.com/s/photos/smoothie?orientation=landscape 
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
