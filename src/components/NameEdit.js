@@ -13,7 +13,7 @@ const NameEdit = ({token}) => {
     return (
         <form onSubmit ={submitHandler} className="rowMe">
             <label> Update name:<br></br>
-                <input onChange={(event) => setName(event.target.value)}
+                <input className="userInput" onChange={(event) => setName(event.target.value)}
                 placeholder='enter new name' />
             </label>
             <br></br>

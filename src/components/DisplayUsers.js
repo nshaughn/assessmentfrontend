@@ -16,6 +16,7 @@ const DisplayUsers = ({wide, setWide}) => {
             <button type='submit' onClick={() => {setWide(!wide); setToggle(!toggle)}} className="userButt">DISPLAY ALL USERS</button>
                 <div className={toggle ? "showUser" : "hideUser"}>
                     <div className="userList">
+                        {/* <p>in list</p> */}
                         {usernames.map((user, index) => (
                             <h1 key={index}>{user}</h1>
                         ))}
