@@ -1,9 +1,9 @@
 .modalContent{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: flex-end;
     position:fixed;
+    text-align: center;
     height: 40%;
     min-width: 20%;
     top:50%;
@@ -20,6 +20,10 @@
     box-shadow: 0 0 8px 0 rgba(79, 181, 176, 0.592), 0 6px 20px 0 rgba(100, 100, 100, 0.19);
 }
 
+.modalContent:focus{
+    outline: none;
+}
+
 .modalZ {
     position: fixed;
     top: 0%;
@@ -30,10 +34,61 @@
     z-index: 2;
 }
 
-input{
+.formStyle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-self: flex-end;
+    height: 70%;
+}
+
+.alignSelf {
+    justify-self: flex-start;
+}
+
+#loginModal input{
     border-radius: 0.5rem;
-    border: solid 2px white;
+    border: solid 2px rgb(174, 174, 174);
+    background-color: #ff00f7b4;
     height: 1.5rem;
+    text-align: center;
+    width: 70%;
+    align-self: center;
+    color:#ffffff;
+    font-weight: bolder;
+}
+
+#loginModal input:focus {
+    outline: none;
+    box-shadow: inset 0px 0px 1px 1px white;
+}
+
+.userInput {
+    border-radius: 0.5rem;
+    border: solid 2px rgb(174, 174, 174);
+    background-color: #ff00f7b4;
+    text-align: center;
+    width: 10vw;
+    align-self: center;
+    color:#ffffff;
+    font-weight: bolder;
+    border-style: groove;
+}
+
+.formStyle button {
+    width: 40%;
+    align-self: center;
+    border-radius: 5px;
+    background-color: #4ccaf0dd;
+    border-color: white;
+    color: white;
+}
+
+.formStyle button:hover {
+    cursor: pointer;
+    border-color: greenyellow;
+    color: greenyellow;
+    background-color: #4ccaf063;
 }
 
 ::placeholder {
@@ -60,15 +115,20 @@ input{
     margin-right: -7em;
 }
 .userButt {
-    color: white;
-    background: none;
-    border-style:hidden;
+    color: #ffffff;
+    background: #ff01eeb3;
+    border: solid 1px #ffffff;
+    border-radius: 5px;
     text-align: center;
     align-self: center;
-    outline: solid rgba(0, 128, 0, 0);
+    outline: none;
 }
 .userButt:hover {
-    box-shadow: 0em 0em 0.5em rgba(79, 181, 176, 0.592);
+    cursor: pointer;
+    border-color: greenyellow;
+    color: greenyellow;
+    background-color: #ff01ee71;
+    border-radius: 5px;
 }
 
 .showUser {
@@ -76,34 +136,33 @@ input{
     flex-direction: column;
     text-align: center;
     align-self: center;
-    justify-content: center;
-    width: 80%;
-    height: 80%;
+    justify-content: space-between;
+    width: 95%;
+    height: 50%;
 }
 .showUser button {
     color: white;
     background: none;
-    border-style: none;
+    border: solid 1px rgba(255, 0, 0, 0);
     text-align: center;
     align-self: center;
-    outline: solid rgba(0, 128, 0, 0);
+    outline: none;
 }
 .showUser button:hover {
-    box-shadow: 0em 0em 0.5em rgba(79, 181, 176, 0.592);
-}
-.showUser input {
-    color: white;
-    background: none;
-    border-style: groove;
-    text-align: center;
-}
-.showUser input:hover {
-    box-shadow: 0em 0em 0.5em rgba(79, 181, 176, 0.592);
+    cursor: pointer;
+    border-color: greenyellow;
+    color: greenyellow;
+    background-color: #4ccaf063;
+    border-radius: 5px;
 }
 
 .rowMe {
     display: flex;
     justify-content: space-between;
+}
+
+.rowMe label {
+    text-align: start;
 }
 
 .hideUser {
@@ -116,6 +175,13 @@ input{
 
 .hideSearch {
     display: none;
+}
+
+#userFlex {
+    display: flex;
+    justify-content: space-between;
+    background: #f72585;
+    background: linear-gradient(0deg,#f72585 50%, #4cc9f0 100%);
 }
 
 ::-webkit-scrollbar {

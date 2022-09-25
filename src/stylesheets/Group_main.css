@@ -108,6 +108,30 @@ p {
     box-shadow: var(--shadow_main);
 }
 
+.splashPage {
+    display: flex;
+    justify-content: space-evenly;
+    width: var(--page_width);
+    padding: 10px;
+    margin: auto;
+    background-image: linear-gradient(to bottom left, #3d033a, #3d033a);
+    box-shadow: var(--shadow_main);
+    /* height: 550.5px; */
+}
+
+.animationFront {
+    height: 50vh;
+    width: 95%;
+    padding: 10px;
+    overflow: auto;
+    border: var(--borders_sub);
+    animation: fruits 30s infinite;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 .innerCont {
     width: 100%;
     display: flex;
@@ -172,6 +196,7 @@ p {
     justify-content: space-between;
     align-items: center;
     border-radius: 5px;
+    box-shadow: 0px 2px 3px black;
 }
 
 .hulk {
@@ -189,6 +214,7 @@ p {
 }
 
 .fruit_price:active {
+    box-shadow: none;
     transform: translateY(2px);
 }
 
@@ -212,4 +238,14 @@ p {
     100% { transform: scale(1); }
 }
 
+@keyframes fruits {
+    0%, 100%{background-image: url(../images/back1.jpg)}
+    12.5%{background-image: url(../images/back2.jpg)}
+    25%{background-image: url(../images/back3.jpg)}
+    37.5%{background-image: url(../images/back4.jpg)}
+    50%{background-image: url(../images/back5.jpg)}
+    62.5%{background-image: url(../images/back6.jpg)}
+    75%{background-image: url(../images/back7.jpg)}
+    87.5%{background-image: url(../images/back8.jpg)}
+}
 
