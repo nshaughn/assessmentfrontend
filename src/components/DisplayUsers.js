@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import { displayUsers } from '../utils';
 
-const DisplayUsers = ({wide, setWide}) => {
+const DisplayUsers = ({ wide, setWide }) => {
     const [usernames, setUsernames] = useState([])
     const [toggle, setToggle] = useState(false);
     const loadUsernames = async (event) => {
@@ -12,16 +12,15 @@ const DisplayUsers = ({wide, setWide}) => {
     }
 
     return (
-        <form onSubmit ={loadUsernames}>
-            <button type='submit' onClick={() => {setWide(!wide); setToggle(!toggle)}} className="userButt">DISPLAY ALL USERS</button>
-                <div className={toggle ? "showUser" : "hideUser"}>
-                    <div className="userList">
-                        {/* <p>in list</p> */}
-                        {usernames.map((user, index) => (
-                            <h1 key={index}>{user}</h1>
-                        ))}
-                    </div>
+        <form onSubmit={loadUsernames} className='outerUserList'>
+            <button type='submit' onClick={() => { setWide(!wide); setToggle(!toggle) }} className="userButt">DISPLAY ALL USERS</button>
+            <div className={toggle ? "showUser" : "hideUser"}>
+                <div className="userList">
+                    {usernames?.map((user, index) => (
+                        <h1 key={index}>{user}</h1>
+                    ))}
                 </div>
+            </div>
         </form>
     )
 }

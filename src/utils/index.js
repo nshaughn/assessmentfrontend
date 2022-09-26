@@ -43,9 +43,7 @@ export const displayUsers = async () => {
             headers: {"Content-Type": "application/json"}
         });
         const data = await response.json()
-        console.log(data)
-        const usernames = data.map(users => users.name)
-        console.log(usernames)
+        const usernames = data.userList.map(users => users.name)
         return usernames
     } catch (error)  {
         console.log(error)
