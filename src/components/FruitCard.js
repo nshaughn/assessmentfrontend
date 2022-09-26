@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { faker } from '@faker-js/faker';
 
 const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name, id, price } }) => {
-
+    let selected = []
     // const [smoothie, setSmoothie] = useState([])
     // // const [total, setTotal] = useState(0)
-
+    
     const handleClick = (name) => {
         console.log(name)
+        selected.push(name)
+        console.log(selected)
+        return selected
         // if(!fruit.)
         // // setSmoothie([...smoothie])
         // return name
@@ -37,9 +40,9 @@ const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name, id
                     </div>
 
 
-                    <div className='fruit_price'>
+                    <div className='fruit_price' onClick={() => handleClick(name)}>
                         <p>Price per portion: <b>£{price}</b></p>
-                        <button className='hulk' onClick={() => handleClick(name)}>⇨</button>
+                        <p className='hulk'>⇨</p>
                     </div>
 
                 </div>
