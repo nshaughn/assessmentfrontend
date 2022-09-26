@@ -81,16 +81,14 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                             <div className="price"><p>Remarkable price! Only £12</p></div>
                          </div>
 
-
-
                 </div>
                 
                 
                 {/* Card 3 */}
                 <div className='offers offers_yellow'>
-                <img src={require("../images/smoothie_offers/smoothie_yellow.png")} alt='logo' />
-                         
-                         
+
+                <img src={require("../images/smoothie_offers/smoothie_yellow.png")} alt='logo' />    
+                
                          <div className="ingredients">
                             <h1>Yellow Special Offer</h1>
                             <p>Apricot</p>
@@ -98,9 +96,6 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                             <p>Orange</p>
                             <div className="price"><p>Remarkable price! Only £12</p></div>
                          </div>
-
-
-
 
                 </div>
 
