@@ -48,8 +48,8 @@ export const displayUsers = async (token) => {
         }
         });
         const data = await response.json()
-        const usernames = data.map(users => users.name)
-        console.log(usernames)
+
+        const usernames = data.userList.map(users => users.name)
         return usernames
     } catch (error)  {
         console.log(error)

@@ -99,9 +99,9 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: space-between;
     overflow: hidden;
     width:100%;
-    height: auto;
 }
 
 .userList {
@@ -110,10 +110,15 @@
     text-align: center;
     font-size:0.5em;
     overflow-y: scroll;
-    margin-top: 2em;
-    margin-left: 4em;
-    margin-right: -7em;
+    padding-left: 18px;
+    height: 40vh;
+    background-color: rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
 }
+.userList h1 {
+    color: #65e8e8;
+}
+
 .userButt {
     color: #ffffff;
     background: #ff01eeb3;
