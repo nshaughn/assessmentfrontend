@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Checkout from './pages/Checkout';
 import Home from './pages/Home';
+import { getCookie } from "./common";
+import { findUser } from "./utils";
 // import "./stylesheets/App.css"
 // import "./stylesheets/Group_main.css"
 
@@ -13,8 +15,19 @@ const App = () => {
   const [token, setToken] = useState("")
   const [toggle, setToggle] = useState(false);
 
+
+  const loginWithToken = async (cookie) => {
+    const user = await findUser(cookie)
+    setUser(user)
+  }
+
   useEffect(() => {
     fetchFruit()
+    let cookie = getCookie("jwt_token")
+    console.log(cookie)
+    if(cookie !== false){
+      loginWithToken(cookie)
+    }
   }, [])
 
       const fetchFruit = async () => {
@@ -42,7 +55,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path='/' exact element={<Home user={user} setUser={setUser} token={token} setToken={setToken} toggle={toggle} setToggle={setToggle} fruits={fruits} />} />
-          <Route path='/checkout' element={<Checkout />} />
+          {/* <Route path='/checkout' element={<Checkout />} /> */}
         </Routes>
       </Router>
     </div>
