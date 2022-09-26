@@ -11,5 +11,9 @@
     --shadow_sub: -1px 1px 13px 4px rgba(0,0,0,0.2);
 
     --page_width: 90%;
+
+    --offers_h1: #f5c0e9;
+    --offers_h1_size: 17pt;
+    --offers_ribbon: rgba(49, 18, 40, 0.5);
 }
 
