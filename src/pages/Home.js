@@ -35,14 +35,14 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, selec
                     :
 
                     <div className="login">
-                        <p>
+                        <p id='welcome'>
                             Welcome, {user}! 
                         </p>
-                        <form onSubmit={logout}>
-                            <button type='submit'>Click here to logout</button>
+                        <AccountModal token={token} />
+                        <form onSubmit={logout} id='logout'>
+                            <button type='submit'>Logout</button>
                         </form>
                         
-                        <AccountModal token={token} />
                     </div>}
             </div>
 
