@@ -5,13 +5,18 @@ import FruitCard from "../components/FruitCard";
 import Sidebar from '../components/Sidebar';
 import "../stylesheets/Group_main.css";
 
-function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
+function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, handleClick }) {
     const [loginStateModal, showLoginStateModal] = useState(false)
     const [registerStateModal, showRegisterStateModal] = useState(false)
     function openLoginModal() { showLoginStateModal(true); }
     function openRegisterModal() { showRegisterStateModal(true); }
     function closeLoginModal() { showLoginStateModal(false); }
     function closeRegisterModal() { showRegisterStateModal(false); }
+
+    const logout = async () => {
+        let name = 'jwt_token'
+        document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;'
+      }
 
     return (
 
@@ -29,7 +34,14 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
 
                     :
 
-                    <div className="login"><p>Welcome, {user}! </p>
+                    <div className="login">
+                        <p>
+                            Welcome, {user}! 
+                        </p>
+                        <form onSubmit={logout}>
+                            <button type='submit'>Click here to logout</button>
+                        </form>
+                        
                         <AccountModal token={token} />
                     </div>}
             </div>
@@ -75,7 +87,9 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
 
                     <div className='selectionCont'>
                         <div className='innerCont'>
-                            <div className="container_headers"><p>Click the ingredient to build your smoothie:</p></div>
+                            <div className="container_headers">
+                                <p>Click the ingredient to build your smoothie:</p>                            
+                            </div>
                             <div className='selectionBoxes'>
                                 {fruits?.length > 0 ? (
                                     <div>
@@ -91,7 +105,10 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                             </div>
                         </div>
                         <div className='innerCont'>
-                            <div className="container_headers"><p>Your smoothie:</p></div>
+                            <div className="container_headers">
+                                <p>Your smoothie:</p>
+                                <p>{handleClick}</p>
+                            </div>
                             <div className='selectionBoxes'>
                             </div>
                         </div>
