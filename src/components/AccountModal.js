@@ -18,9 +18,7 @@ const AccountModal = ({token}) => {
         <div>
             <a onClick={openAccountModal} id="account">Manage account</a>
             <Modal isOpen={accountStateModal} onRequestClose={closeAccountModal} className="modalContent" id="userFlex" contentLabel="Example Modal" overlayClassName="modalZ">
-                <div className="outerUserList">
-                    <DisplayUsers wide={toggle} setWide={setToggle}/>
-                </div>    
+                <DisplayUsers wide={toggle} setWide={setToggle}/>
                 <div className={!toggle ? "showUser" : "hideUser"}>
                     <NameEdit token={token} />
                     <EmailEdit token={token} />
