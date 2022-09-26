@@ -13,7 +13,7 @@ const Register = () => {
     }
 
     return (
-        <form onSubmit={submitHandler} className="formStyle">
+        <form onSubmit={submitHandler} className="formStyle" id="loginModal">
             <div>
                 <input onChange={(event) => setName(event.target.value)} placeholder="name" />
                 <br></br>
