@@ -5,7 +5,8 @@ import FruitCard from "../components/FruitCard";
 import Sidebar from '../components/Sidebar';
 import "../stylesheets/Group_main.css";
 
-function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, selected }) {
+function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
+    const [list, setList] = useState([])
     const [loginStateModal, showLoginStateModal] = useState(false)
     const [registerStateModal, showRegisterStateModal] = useState(false)
     function openLoginModal() { showLoginStateModal(true); }
@@ -80,16 +81,14 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, selec
                             <div className="price"><p>Remarkable price! Only £12</p></div>
                          </div>
 
-
-
                 </div>
                 
                 
                 {/* Card 3 */}
                 <div className='offers offers_yellow'>
-                <img src={require("../images/smoothie_offers/smoothie_red.png")} alt='logo' />
-                         
-                         
+
+                <img src={require("../images/smoothie_offers/smoothie_yellow.png")} alt='logo' />    
+                
                          <div className="ingredients">
                             <h1>Yellow Special Offer</h1>
                             <p>Apricot</p>
@@ -97,9 +96,6 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, selec
                             <p>Orange</p>
                             <div className="price"><p>Remarkable price! Only £12</p></div>
                          </div>
-
-
-
 
                 </div>
 
@@ -130,7 +126,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, selec
                                 {fruits?.length > 0 ? (
                                     <div>
                                         {fruits.map((fruit) => (
-                                            <FruitCard fruit={fruit} />
+                                            <FruitCard fruit={fruit} list={list} setList={setList} />
                                         ))}
                                     </div>
                                 ) : (
@@ -145,11 +141,20 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, selec
                                 <p>Your smoothie:</p>
                             </div>
                             <div className='selectionBoxes'>
-                                <p>{selected}</p>
+                                {list?.length > 0 ? (
+                                    <div>
+                                        {list?.map((name, index) => (
+                                            <p key={index}>{name}</p>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <div>
+                                        <h1>No ingredients selected!</h1>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>
-                    {/*  */}
                 </>}
         </div>
 

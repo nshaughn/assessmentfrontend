@@ -1,12 +1,14 @@
 import React from 'react' 
 import { useState } from "react";
 import { deleteAccount } from '../utils';
+import { getCookie } from '../common';
 
 const AccountDelete = ({token}) => {
     const [confirm, setConfirm] = useState(false)
 
     const submitHandler = async (event) => {
         event.preventDefault()
+        let token = getCookie("jwt_token")
         if(confirm){
             await deleteAccount(token)
         }

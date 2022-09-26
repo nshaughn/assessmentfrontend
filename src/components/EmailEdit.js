@@ -1,12 +1,14 @@
 import React from 'react' 
 import { useState } from "react";
 import { editEmail } from '../utils';
+import { getCookie } from '../common';
 
 const EmailEdit = ({token}) => {
     const [email, setEmail] = useState()
 
     const submitHandler = async (event) => {
         event.preventDefault()
+        let token = getCookie("jwt_token")
         await editEmail(token, email)
     }
 
