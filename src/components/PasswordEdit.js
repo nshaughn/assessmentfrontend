@@ -2,11 +2,14 @@ import React from 'react'
 import { useState } from "react";
 import { editPassword } from '../utils';
 
+import { getCookie } from '../common';
+
 const PasswordEdit = ({ token }) => {
     const [password, setPassword] = useState()
 
     const submitHandler = async (event) => {
         event.preventDefault()
+        let token = getCookie("jwt_token")
         await editPassword(token, password)
     }
 
