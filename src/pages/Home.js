@@ -5,7 +5,7 @@ import FruitCard from "../components/FruitCard";
 import Sidebar from '../components/Sidebar';
 import "../stylesheets/Group_main.css";
 
-function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, handleClick }) {
+function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, selected }) {
     const [loginStateModal, showLoginStateModal] = useState(false)
     const [registerStateModal, showRegisterStateModal] = useState(false)
     function openLoginModal() { showLoginStateModal(true); }
@@ -107,9 +107,9 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, handl
                         <div className='innerCont'>
                             <div className="container_headers">
                                 <p>Your smoothie:</p>
-                                <p>{handleClick}</p>
                             </div>
                             <div className='selectionBoxes'>
+                                <p>{selected}</p>
                             </div>
                         </div>
                     </div>
