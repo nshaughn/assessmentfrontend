@@ -1,3 +1,5 @@
+import { writeCookie } from "../common";
+
 export const register = async (name, email, password) => {
     try {
         const response = await fetch(`${process.env.REACT_APP_USER_API}signup`, {
@@ -28,21 +30,25 @@ export const login = async (email, password, setter) => {
         });
         const data = await response.json()
         console.log(data.token)
-        setter(data.user)
-        return data.token
+        setter(data.name)
+        writeCookie("jwt_token", data.token, 7)
+        // return data.token
 
     } catch (error) {
         console.log(error)
     }
 }
 
-export const displayUsers = async () => {
+export const displayUsers = async (token) => {
     try {
         const response = await fetch(`${process.env.REACT_APP_USER_API}list`, {
             method: "GET",
-            headers: {"Content-Type": "application/json"}
+            headers: {"Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`            
+        }
         });
         const data = await response.json()
+
         const usernames = data.userList.map(users => users.name)
         return usernames
     } catch (error)  {
@@ -105,3 +111,20 @@ export const deleteAccount = async (token) => {
     }
 }
 
+export const findUser = async (cookie) => {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_USER_API}findUser`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${cookie}`
+            }
+        });
+        const data = await response.json()
+        console.log(data)
+        return data.name.name
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
