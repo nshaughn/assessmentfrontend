@@ -77,7 +77,7 @@ p {
 }
 
 #logout button:hover{
-    background-image: linear-gradient(to bottom, #6723c0, #4d1b8f);
+    background-image: linear-gradient(to bottom, #6723c0, #1e75c7);
     cursor: pointer;
     border-bottom: var(--borders_sub);
     animation: hoverOver 4s ease infinite;
@@ -118,7 +118,7 @@ p {
 }
 
 .login a:hover{
-    background-image: linear-gradient(to bottom, #6723c0, #4d1b8f);
+    background-image: linear-gradient(to bottom, #6723c0, #1e75c7);
     cursor: pointer;
     border-bottom: var(--borders_sub);
     animation: hoverOver 4s ease infinite;
