@@ -25,9 +25,6 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
         <div className="master">
             <div className="header_bar">
                 <img className="logo_img" src={require("../images/smoothie_logo_v1.png")} alt='logo' />
-                <div className="highZ">
-                    <Sidebar />
-                </div>
                 {!user ?
                     <div className="login">
                         <p>Log-in to create your smoothie!</p>
@@ -35,17 +32,21 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                     </div>
 
                     :
+                    <>
+                        <div className="highZ">
+                            <Sidebar />
+                        </div>
+                        <div className="login">
+                            <p id='welcome'>
+                                Welcome, {user}!
+                            </p>
+                            <AccountModal token={token} />
+                            <form onSubmit={Logout} id='logout'>
+                                <button type='submit'>Logout</button>
+                            </form>
 
-                    <div className="login">
-                        <p id='welcome'>
-                            Welcome, {user}! 
-                        </p>
-                        <AccountModal token={token} />
-                        <form onSubmit={Logout} id='logout'>
-                            <button type='submit'>Logout</button>
-                        </form>
-                        
-                    </div>}
+                        </div>
+                    </>}
             </div>
 
             <div className='offers_container'>
@@ -53,50 +54,50 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                 {/* Card 1 */}
                 <div className="offers offers_red">
                     <img src={require("../images/smoothie_offers/smoothie_red.png")} alt='Red Smoothie' />
-                         
-                         
-                         <div className="ingredients">
-                            <h1>Red Special Offer</h1>
-                            <p>Red apple</p>
-                            <p>Lychee</p>
-                            <p>Strawberry</p>
-                            <div className="price"><p>Remarkable price! Only £12</p></div>
-                         </div>
+
+
+                    <div className="ingredients">
+                        <h1>Red Special Offer</h1>
+                        <p>Red apple</p>
+                        <p>Lychee</p>
+                        <p>Strawberry</p>
+                        <div className="price"><p>Remarkable price! Only £12</p></div>
+                    </div>
 
 
 
                 </div>
 
 
-                  
+
                 {/* Card 2 */}
                 <div className='offers offers_mixed'>
-                <img src={require("../images/smoothie_offers/smoothie_mixed.png")} alt='Mixed smoothie' />
-                         
-                         
-                         <div className="ingredients">
-                            <h1>Mixed Special Offer</h1>
-                            <p>Green Apple</p>
-                            <p>Banana</p>
-                            <p>Watermelon</p>
-                            <div className="price"><p>Remarkable price! Only £12</p></div>
-                         </div>
+                    <img src={require("../images/smoothie_offers/smoothie_mixed.png")} alt='Mixed smoothie' />
+
+
+                    <div className="ingredients">
+                        <h1>Mixed Special Offer</h1>
+                        <p>Green Apple</p>
+                        <p>Banana</p>
+                        <p>Watermelon</p>
+                        <div className="price"><p>Remarkable price! Only £12</p></div>
+                    </div>
 
                 </div>
-                
-                
+
+
                 {/* Card 3 */}
                 <div className='offers offers_yellow'>
 
-                <img src={require("../images/smoothie_offers/smoothie_yellow.png")} alt='Yellow Smoothie' />    
-                
-                         <div className="ingredients">
-                            <h1>Yellow Special Offer</h1>
-                            <p>Apricot</p>
-                            <p>Lemon</p>
-                            <p>Orange</p>
-                            <div className="price"><p>Remarkable price! Only £12</p></div>
-                         </div>
+                    <img src={require("../images/smoothie_offers/smoothie_yellow.png")} alt='Yellow Smoothie' />
+
+                    <div className="ingredients">
+                        <h1>Yellow Special Offer</h1>
+                        <p>Apricot</p>
+                        <p>Lemon</p>
+                        <p>Orange</p>
+                        <div className="price"><p>Remarkable price! Only £12</p></div>
+                    </div>
 
                 </div>
 
@@ -121,7 +122,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                     <div className='selectionCont'>
                         <div className='innerCont'>
                             <div className="container_headers">
-                                <p>Click the ingredient to build your smoothie:</p>                            
+                                <p>Click the ingredient to build your smoothie:</p>
                             </div>
                             <div className='selectionBoxes'>
                                 {fruits?.length > 0 ? (
