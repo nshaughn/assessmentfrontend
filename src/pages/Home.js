@@ -144,10 +144,13 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                             </div>
                             <div className='selectionBoxes'>
                                 {list?.length > 0 ? (
-                                    <div className="selectedCSS">
-                                        {list?.map((name, index) => (
-                                            <p key={index}>{name}</p>
-                                        ))}
+                                    <div id="outerSelected">
+                                        <div className="selectedCSS">
+                                            {list?.map((name, index) => (
+                                                <p key={index}>{name}</p>
+                                            ))}
+                                        </div>
+                                        <button id="addToBasket" type="submit">+🛒</button>
                                     </div>
                                 ) : (
                                     <div className="selectedCSS">
