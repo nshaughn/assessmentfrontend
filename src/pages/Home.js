@@ -6,7 +6,7 @@ import Sidebar from '../components/Sidebar';
 import Logout from "../components/Logout";
 import "../stylesheets/Group_main.css";
 
-function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
+function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, registerClicked, setRegisterClicked }) {
     const [list, setList] = useState([])
     const [loginStateModal, showLoginStateModal] = useState(false)
     const [registerStateModal, showRegisterStateModal] = useState(false)
@@ -14,11 +14,6 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
     function openRegisterModal() { showRegisterStateModal(true); }
     function closeLoginModal() { showLoginStateModal(false); }
     function closeRegisterModal() { showRegisterStateModal(false); }
-
-    // const logout = async () => {
-    //     let name = 'jwt_token'
-    //     document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;'
-    //   }
 
     return (
 
@@ -107,7 +102,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                 <>
                     <UserModal setter={setUser} setToken={setToken} toggle={toggle} setToggle={setToggle} loginStateModal={loginStateModal}
                         registerStateModal={registerStateModal} showRegisterStateModal={showRegisterStateModal} closeLoginModal={closeLoginModal}
-                        closeRegisterModal={closeRegisterModal} />
+                        closeRegisterModal={closeRegisterModal} user={user} registerClicked={registerClicked} setRegisterClicked={setRegisterClicked} />
                     <div className='splashPage'>
                         <div className='innerCont'>
                             <div className="container_headers"><p>🡗 SCRATCH & SNIFF 🡖</p></div>

@@ -1,14 +1,17 @@
 import React from 'react'
+import { useEffect } from 'react';
 import { useState } from "react";
 import { register } from '../utils';
 
-const Register = () => {
+const Register = ({ setter, user, registerClicked, setRegisterClicked }) => {
     const [name, setName] = useState()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
 
-    const submitHandler = async () => {
-        await register(name, email, password)
+    const submitHandler = async (event) => {
+        event.preventDefault()
+        await register(name, email, password, setter)
+        setRegisterClicked(!registerClicked)
     }
 
     return (

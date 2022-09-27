@@ -203,7 +203,7 @@
     cursor: pointer;
 }
 .sendCheckout:active {
-    transform: translateY(3px);
+    /* transform: translateY(3px); */
     background-color: rgb(122, 29, 134);
 }
 

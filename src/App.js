@@ -10,10 +10,11 @@ import { findUser } from "./utils";
 const App = () => {
 
   const [errorMsg, setErrorMsg] = useState('');
-  const [fruits, setFruits] = useState([])
-  const [user, setUser] = useState()
-  const [token, setToken] = useState("")
+  const [fruits, setFruits] = useState([]);
+  const [user, setUser] = useState();
+  const [token, setToken] = useState("");
   const [toggle, setToggle] = useState(false);
+  const [registerClicked, setRegisterClicked] = useState(false);
 
 
   const loginWithToken = async (cookie) => {
@@ -28,7 +29,7 @@ const App = () => {
     if(cookie !== false){
       loginWithToken(cookie)
     }
-  }, [])
+  }, [registerClicked])
 
 
       const fetchFruit = async () => {
@@ -55,7 +56,7 @@ const App = () => {
     <div className="main">
       <Router>
         <Routes>
-          <Route path='/' exact element={<Home user={user} setUser={setUser} token={token} setToken={setToken} toggle={toggle} setToggle={setToggle} fruits={fruits} />} />
+          <Route path='/' exact element={<Home user={user} setUser={setUser} token={token} setToken={setToken} toggle={toggle} setToggle={setToggle} fruits={fruits} registerClicked={registerClicked} setRegisterClicked={setRegisterClicked} />} />
           {/* <Route path='/checkout' element={<Checkout />} /> */}
         </Routes>
       </Router>
