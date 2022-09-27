@@ -3,6 +3,7 @@ import UserModal from "../components/UserModal";
 import AccountModal from "../components/AccountModal";
 import FruitCard from "../components/FruitCard";
 import Sidebar from '../components/Sidebar';
+import Logout from "../components/Logout";
 import "../stylesheets/Group_main.css";
 
 function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
@@ -14,10 +15,10 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
     function closeLoginModal() { showLoginStateModal(false); }
     function closeRegisterModal() { showRegisterStateModal(false); }
 
-    const logout = async () => {
-        let name = 'jwt_token'
-        document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;'
-      }
+    // const logout = async () => {
+    //     let name = 'jwt_token'
+    //     document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;'
+    //   }
 
     return (
 
@@ -40,7 +41,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                             Welcome, {user}! 
                         </p>
                         <AccountModal token={token} />
-                        <form onSubmit={logout} id='logout'>
+                        <form onSubmit={Logout} id='logout'>
                             <button type='submit'>Logout</button>
                         </form>
                         
@@ -125,8 +126,8 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                             <div className='selectionBoxes'>
                                 {fruits?.length > 0 ? (
                                     <div>
-                                        {fruits.map((fruit) => (
-                                            <FruitCard fruit={fruit} list={list} setList={setList} />
+                                        {fruits.map((fruit, index) => (
+                                            <FruitCard fruit={fruit} list={list} setList={setList} key={index} />
                                         ))}
                                     </div>
                                 ) : (
@@ -142,13 +143,13 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                             </div>
                             <div className='selectionBoxes'>
                                 {list?.length > 0 ? (
-                                    <div>
+                                    <div className="selectedCSS">
                                         {list?.map((name, index) => (
                                             <p key={index}>{name}</p>
                                         ))}
                                     </div>
                                 ) : (
-                                    <div>
+                                    <div className="selectedCSS">
                                         <h1>No ingredients selected!</h1>
                                     </div>
                                 )}

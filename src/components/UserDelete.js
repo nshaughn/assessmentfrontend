@@ -3,17 +3,16 @@ import { useState } from "react";
 import { deleteAccount } from '../utils';
 import { getCookie } from '../common';
 
-const AccountDelete = ({token}) => {
+const AccountDelete = () => {
     const [confirm, setConfirm] = useState(false)
 
-    const submitHandler = async (event) => {
-        event.preventDefault()
+    const submitHandler = async () => {
         let token = getCookie("jwt_token")
         if(confirm){
             await deleteAccount(token)
         }
     }
-
+    
     const confirmation = async (val) => {
         if(val.target.value === 'DELETE'){
             await setConfirm(true)

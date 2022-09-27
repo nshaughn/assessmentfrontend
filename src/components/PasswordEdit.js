@@ -17,7 +17,7 @@ const PasswordEdit = ({ token }) => {
         <form onSubmit={submitHandler} className="rowMe">
             <label> Update password:<br></br>
                 <input className="userInput" onChange={(event) => setPassword(event.target.value)}
-                placeholder='enter new password' />
+                placeholder='enter new password' type="password" />
             </label>
             <br></br>
             <button type='submit'>Submit</button>

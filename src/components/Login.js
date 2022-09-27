@@ -17,7 +17,7 @@ const Login = ({ setter, setToken }) => {
             <div>
                 <input onChange={(event) => setEmail(event.target.value)} placeholder="email" />
                 <br></br>
-                <input onChange={(event) => setPassword(event.target.value)} className="alignSelf" placeholder="password" />
+                <input onChange={(event) => setPassword(event.target.value)} className="alignSelf" placeholder="password" type="password" />
                 <br></br>
             </div>
             <div>

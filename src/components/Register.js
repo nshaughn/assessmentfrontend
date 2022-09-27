@@ -7,8 +7,7 @@ const Register = () => {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
 
-    const submitHandler = async (event) => {
-        event.preventDefault()
+    const submitHandler = async () => {
         await register(name, email, password)
     }
 
@@ -19,7 +18,7 @@ const Register = () => {
                 <br></br>
                 <input onChange={(event) => setEmail(event.target.value)} placeholder="email" />
                 <br></br>
-                <input onChange={(event) => setPassword(event.target.value)} placeholder="password" />
+                <input onChange={(event) => setPassword(event.target.value)} placeholder="password" type="password" />
                 <br></br>
             </div>
             <div>
