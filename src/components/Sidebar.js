@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components'
 import * as AiIcons from "react-icons/ai";
 // import * as TbIcons from "react-icons/tb";
@@ -7,8 +7,7 @@ import { Link } from 'react-router-dom';
 
 import "../stylesheets/Sidebar.css"
 
-function Sidebar({})
-{
+function Sidebar({ }) {
     const [sidebar, setSidebar] = useState(false)
     const showSidebar = () => setSidebar(!sidebar)
     // useEffect(()=> {
@@ -28,23 +27,23 @@ function Sidebar({})
     //         } 
     //     }    
     // }
-    
-            return (
+
+    return (
         <>
-        <div className={sidebar ? 'fixMeDaddy somethingElse' : 'fixMeDaddy'}>
-            <button className="basket" onClick={showSidebar}>
-                        <BasketDiv>
-                            {/* Checkout Basket&nbsp;&nbsp; */}
-                            <AiIcons.AiOutlineShoppingCart className='cart-icon'/>
-                        </BasketDiv>
-            </button>
-        </div>
-        <div className={sidebar ? 'sideBar active' : 'sideBar'}>
-            <nav className='side-menu'>
-                <ul className='side-menu-items'>
-                    <li className='sidebar-toggle'>
-                    </li>
-                        <div>
+            <div className={sidebar ? 'fixMeDaddy somethingElse' : 'fixMeDaddy'}>
+                <button className="basket" onClick={showSidebar}>
+                    <BasketDiv>
+                        {/* Checkout Basket&nbsp;&nbsp; */}
+                        <AiIcons.AiOutlineShoppingCart className='cart-icon' />
+                    </BasketDiv>
+                </button>
+            </div>
+            <div className={sidebar ? 'sideBar active' : 'sideBar'}>
+                <nav className='side-menu'>
+                    <ul className='side-menu-items'>
+                        <li className='sidebar-toggle'>
+                        </li>
+                        <div className="outerBasket">
                             <div className="basketContents">
                                 <h1 className='h1Text'>Basket</h1>
                                 {/* {checkOut.map((checkOutList, index) =>
@@ -57,9 +56,12 @@ function Sidebar({})
                                         );
                                     })} */}
                             </div>
+                                <div className="addedItems">
+                                    <p>added items will be here</p>
+                                </div>
                             {/* <p className="runningTotal">£{total}</p> */}
                             {/* <Link to="/checkout"> */}
-                                <button className="sendCheckout">Checkout</button>
+                            <button className="sendCheckout">Checkout</button>
                             {/* </Link> */}
                         </div>
                     </ul>
