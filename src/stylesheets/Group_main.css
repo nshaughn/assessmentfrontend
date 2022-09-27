@@ -254,6 +254,17 @@ p {
     background-color: rgb(51, 9, 49);
 }
 
+#outerSelected {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size:1.5em;
+    overflow-y: scroll;
+    padding-left: 18px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
+}
 
 .selectedCSS {
     display: flex;
@@ -263,7 +274,8 @@ p {
     overflow-y: scroll;
     padding-left: 18px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.37);
+    /* background-color: rgba(255, 255, 255, 0.37); */
+    margin-bottom: 8px;
     border-radius: 10px;
 }
 
@@ -286,6 +298,20 @@ p {
     object-fit:contain;
     width: 100%;
     height: 50px;
+}
+
+#addToBasket {
+    width: 20%;
+    font-size: 1em;
+    align-self: center;
+    border: rgba(155, 134, 134, 0);
+    border-radius: 50px 50px 0px 0px;
+    background-image: linear-gradient(to bottom left, #3d033a, #3d033a);
+}
+
+#addToBasket:hover {
+    color: greenyellow;
+    box-shadow: 0px 0px 3px 3px greenyellow;
 }
 
 @keyframes hoverOver {
