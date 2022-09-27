@@ -23,25 +23,17 @@ const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name, pr
     return (
         <div>
             <div className='fruit' key={index}>
-                <div>
-                    <div className="fruit_list_image" >
-                      <img src={require(`../images/fruitlist/${name}.png`)} alt={`Image of a(n) ${name}`} />
- 
-
-                    <div className='fruit_makeup'>
-                        <h1>{name}</h1>
-                    </div>
-                    <div className='fruit_makeup'>
-                        <p>Calories: {calories}kcal</p>
-                        <p>Protein: {protein}g</p>
-                        <p>Sugar: {sugar}g</p>
-
-
-                    </div>
-                    </div>
+                <div className="fruit_list_image" >
+                    <img src={require(`../images/fruitlist/${name}.png`)} alt={`Image of a(n) ${name}`} />
                 </div>
-
-
+                <div className='fruit_makeup'>
+                    <h1>{name}</h1>
+                </div>
+                <div className='fruit_makeup'>
+                    <p>Calories: {calories}kcal</p>
+                    <p>Protein: {protein}g</p>
+                    <p>Sugar: {sugar}g</p>
+                </div>
                 <div className='fruit_price' onClick={() => handleClick(name)}>
                     <p>Price per portion: <b>£{price}</b></p>
                     <p className='hulk'>⇨</p>
