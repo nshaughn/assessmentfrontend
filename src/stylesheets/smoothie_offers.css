@@ -20,7 +20,7 @@
      margin: auto;
 
      padding: 10px;
-     height: 20vh;
+     height: 170px;
      box-shadow: var(--shadow_main);
 
      text-align: center;
@@ -33,7 +33,7 @@
 
      border: var(--borders_sub);
      width: 30%;
-     height: 95%;
+     height: 170px;
      cursor: pointer;
 }
 
