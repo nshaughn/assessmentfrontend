@@ -200,6 +200,7 @@ p {
     display: inline-block;
     vertical-align: middle;
 
+
 }
 
 .fruit h1 {
@@ -211,7 +212,7 @@ p {
 
 .fruit_price {
     align-self: center;
-    min-width: 250px;
+    min-width: 230px;
     text-align: center;
     padding: 0px 10px 0px 10px;
     background-color: #3e0449;
@@ -251,6 +252,15 @@ p {
     text-align: center;
     background-color: rgb(51, 9, 49);
 }
+
+
+.fruit_list_image img { 
+    display: inline-block;
+    width: 100px;
+    vertical-align: middle;
+
+}
+
 
 @keyframes hoverOver {
     0%{background-position:0% 50%}
