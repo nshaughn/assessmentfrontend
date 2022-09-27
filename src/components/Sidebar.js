@@ -46,6 +46,7 @@ function Sidebar({})
                     </li>
                         <div>
                             <div className="basketContents">
+                                <h1 className='h1Text'>Basket</h1>
                                 {/* {checkOut.map((checkOutList, index) =>
                                 {
                                     return (
@@ -57,9 +58,9 @@ function Sidebar({})
                                     })} */}
                             </div>
                             {/* <p className="runningTotal">£{total}</p> */}
-                            <Link to="/checkout">
+                            {/* <Link to="/checkout"> */}
                                 <button className="sendCheckout">Checkout</button>
-                            </Link>
+                            {/* </Link> */}
                         </div>
                     </ul>
                 </nav>
