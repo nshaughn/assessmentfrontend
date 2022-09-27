@@ -51,7 +51,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
 
                 {/* Card 1 */}
                 <div className="offers offers_red">
-                    <img src={require("../images/smoothie_offers/smoothie_red.png")} alt='logo' />
+                    <img src={require("../images/smoothie_offers/smoothie_red.png")} alt='Red Smoothie' />
                          
                          
                          <div className="ingredients">
@@ -70,7 +70,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                   
                 {/* Card 2 */}
                 <div className='offers offers_mixed'>
-                <img src={require("../images/smoothie_offers/smoothie_mixed.png")} alt='logo' />
+                <img src={require("../images/smoothie_offers/smoothie_mixed.png")} alt='Mixed smoothie' />
                          
                          
                          <div className="ingredients">
@@ -87,7 +87,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                 {/* Card 3 */}
                 <div className='offers offers_yellow'>
 
-                <img src={require("../images/smoothie_offers/smoothie_yellow.png")} alt='logo' />    
+                <img src={require("../images/smoothie_offers/smoothie_yellow.png")} alt='Yellow Smoothie' />    
                 
                          <div className="ingredients">
                             <h1>Yellow Special Offer</h1>
