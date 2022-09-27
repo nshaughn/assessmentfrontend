@@ -24,6 +24,10 @@ const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name, pr
         <div>
             <div className='fruit' key={index}>
                 <div>
+                    <div className="fruit_list_image" >
+                      <img src={require(`../images/fruitlist/${name}.png`)} alt={`Image of a(n) ${name}`} />
+ 
+
                     <div className='fruit_makeup'>
                         <h1>{name}</h1>
                     </div>
@@ -31,6 +35,9 @@ const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name, pr
                         <p>Calories: {calories}kcal</p>
                         <p>Protein: {protein}g</p>
                         <p>Sugar: {sugar}g</p>
+
+
+                    </div>
                     </div>
                 </div>
 

@@ -30,6 +30,7 @@ const App = () => {
     }
   }, [])
 
+
       const fetchFruit = async () => {
         try {
           setErrorMsg('');
@@ -39,7 +40,7 @@ const App = () => {
           })
           
           const data = await response.json();
-          console.log(data)
+
           setFruits(data)
         } catch (error) {
           setErrorMsg('Oops, something went wrong')
