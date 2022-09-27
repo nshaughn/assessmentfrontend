@@ -252,6 +252,28 @@ p {
     background-color: rgb(51, 9, 49);
 }
 
+.selectedCSS {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size:1.5em;
+    overflow-y: scroll;
+    padding-left: 18px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
+}
+
+.selectedCSS p {
+    padding: 10px 0px 10px 0px;
+
+}
+
+.selectedCSS h1 {
+    animation: fontColor 20s infinite;
+    font-size: 2em;
+}
+
 @keyframes hoverOver {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
@@ -275,3 +297,16 @@ p {
     87.5%{background-image: url(../images/back8.jpg)}
 }
 
+@keyframes fontColor {
+    0%{color: orange;}
+    10%{color: purple;}
+    20%{color: red;}
+    30%{color: CadetBlue;}
+    40%{color: yellow;}
+    50%{color: coral;}
+    60%{color: green;}
+    70%{color: cyan;}
+    80%{color: DeepPink;}
+    90%{color: DodgerBlue;}
+    100%{color: orange;}   
+}
