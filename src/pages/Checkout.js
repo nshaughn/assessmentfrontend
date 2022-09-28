@@ -1,3 +1,11 @@
+
+const Checkout = async () => {
+    let name = 'jwt_token'
+    document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;'
+  }
+
+export default Checkout;
+
 // import React, { useEffect } from 'react'
 // import { Link } from 'react-router-dom';
 // import * as TbIcons from "react-icons/tb";

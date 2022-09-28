@@ -4,6 +4,7 @@ import * as AiIcons from "react-icons/ai";
 // import * as TbIcons from "react-icons/tb";
 // import { Link } from 'react-router-dom';
 // import SideBarCheckout from './SideBarCheckout';
+import Checkout from '../pages/Checkout';
 
 import "../stylesheets/Sidebar.css"
 
@@ -50,7 +51,12 @@ function Sidebar({ basketList }) {
                                 {/* <p className="runningTotal">£{total}</p> */}
                                 {/* <Link to="/checkout"> */}
                                 <div>
-                                    <button className="sendCheckout">Checkout</button>
+                                    {/* <button className="sendCheckout">Checkout</button> */}
+
+                                        <form onSubmit={Checkout}>
+                                            <button className="sendCheckout" type='submit'>Checkout</button>
+                                        </form>
+
                                 </div>
                                 {/* </Link> */}
                             </div>
