@@ -10,23 +10,6 @@ import "../stylesheets/Sidebar.css"
 function Sidebar({ basketList }) {
     const [sidebar, setSidebar] = useState(false)
     const showSidebar = () => setSidebar(!sidebar)
-    // useEffect(()=> {
-    //     let sum = 0
-    //     for (let i = 0; i < checkOut.length; i++){
-    //         sum += Number(checkOut[i].smoothiePrice)
-    //     }
-    //     setTotal(sum.toFixed(2))
-    // }, [checkOut,setTotal])
-
-    // function removeItem (index) {
-    //     for (let i = 0; i < checkOut.length; i++) {
-    //         if(checkOut[i].catId === index.catId){
-    //             let removeSmoothieFromCart = [...checkOut];
-    //             removeSmoothieFromCart.splice(i, 1)
-    //             setCheckOut(removeSmoothieFromCart)
-    //         } 
-    //     }    
-    // }
 
     return (
         <>
@@ -43,26 +26,31 @@ function Sidebar({ basketList }) {
                     <ul className='side-menu-items'>
                         <li className='sidebar-toggle'>
                         </li>
-                        <div className="outerBasket">
-                            <div className="basketContents">
-                                <h1 className='h1Text'>Basket</h1>
-                                {/* {checkOut.map((checkOutList, index) =>
-                                {
-                                    return (
-                                        <div className="polaroidStyle" key={index}>
-                                            <p className="caption">Your smoothie:<br></br>{checkOutList}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;£{checkOutList.catPrice}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <TbIcons.TbTrashX className='trashIcon' onClick={()=>removeItem(checkOutList, index)}/></p>
+                        <div className="makeFit">
+                            <div className="outerBasket">
+                                {/* <div> */}
+                                    <h1 className='h1Text'>Basket</h1>
+                                {/* </div> */}
+                                <div className="addedCont">
+                                    {basketList?.length > 0 ? (
+                                        <div className="addedItems">
+                                            {basketList?.map((name, index) => (
+                                                <p key={index}>{name}</p>
+                                            ))}
                                         </div>
-                                        );
-                                    })} */}
-                            </div>
-                                <div className="addedItems">
-                                    <p>{basketList}</p>
+                                    ) : (
+                                        <div className="addedItems">
+                                            <h1>Basket is empty!</h1>
+                                        </div>
+                                    )}
                                 </div>
-                            {/* <p className="runningTotal">£{total}</p> */}
-                            {/* <Link to="/checkout"> */}
-                            <button className="sendCheckout">Checkout</button>
-                            {/* </Link> */}
+                                {/* <p className="runningTotal">£{total}</p> */}
+                                {/* <Link to="/checkout"> */}
+                                <div>
+                                    <button className="sendCheckout">Checkout</button>
+                                </div>
+                                {/* </Link> */}
+                            </div>
                         </div>
                     </ul>
                 </nav>
