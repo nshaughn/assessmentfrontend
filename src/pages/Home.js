@@ -18,7 +18,6 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
 
     const sendBasket = () => {
         setBasketList(list)
-        console.log(basketList)
     }
 
     return (
