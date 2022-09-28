@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Checkout from './pages/Checkout';
+// import Checkout from './pages/Checkout';
 import Home from './pages/Home';
 import { getCookie } from "./common";
 import { findUser } from "./utils";
