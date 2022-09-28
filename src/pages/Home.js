@@ -11,6 +11,9 @@ import { useColorMode } from 'theme-ui';
 /** @jsxImportSource theme-ui */
 
 function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, registerClicked, setRegisterClicked }) {
+
+    const [colorMode, setColorMode] = useColorMode();
+
     const [list, setList] = useState([])
     const [loginStateModal, showLoginStateModal] = useState(false)
     const [registerStateModal, showRegisterStateModal] = useState(false)
@@ -47,6 +50,10 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                         </div>
                     </>}
             </div>
+
+            <button sx={{bg: 'black', color: 'white'}} id="toggle" onClick={()=> setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
+               toggle {colorMode === 'light' ? 'Dark': 'light'} <div className="indicator"></div>
+            </button>
 
             <div className='offers_container'>
 
