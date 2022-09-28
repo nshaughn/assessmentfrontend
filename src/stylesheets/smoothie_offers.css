@@ -15,7 +15,7 @@
      justify-content: space-around;
      align-items: center;
      width: var(--page_width);
-     /* background-image: linear-gradient(to bottom right, #3d033a, #1f031d); */
+     background-image: linear-gradient(to bottom right, #3d033a, #1f031d);
      margin: auto;
 
      padding: 10px;
