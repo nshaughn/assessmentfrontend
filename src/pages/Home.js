@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import UserModal from "../components/UserModal";
 import AccountModal from "../components/AccountModal";
 import FruitCard from "../components/FruitCard";
@@ -40,38 +40,39 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
     }
 
     return (
-
         <div className="master">
             <div className="header_bar" sx={{ bg: 'headerBar' }}>
                 <img className="logo_img" src={require("../images/smoothie_logo_v1.png")} alt='logo' />
+
                 <div className="outerFlex">
                     <div className="toggleFlex">
-                    <button className={slide ? 'slide' : null} sx={{ bg: 'black', color: 'white' }} id="slide" onClick={() => { setColorMode(colorMode === 'light' ? 'dark' : 'light'); slideClass() }}>
-                        <div className="indicator">{colorMode === 'light' ? '🌚' : '🌝'}</div>
-                    </button>
+                        <button className={slide ? 'slide' : null} sx={{ bg: 'black', color: 'white' }} id="slide" onClick={() => { setColorMode(colorMode === 'light' ? 'dark' : 'light'); slideClass() }}>
+                            <div className="indicator">{colorMode === 'light' ? '🌚' : '🌝'}</div>
+                        </button>
+
+                        {!user ?
+                            <div className="login" sx={{bg: 'login'}}>
+                                <p>Log-in to create your smoothie!</p>
+                                <button onClick={openLoginModal}>Login</button> <button onClick={openRegisterModal}>Register</button>
+                            </div>
+                            :
+                                <>
+                                    <div className="highZ">
+                                        <Sidebar basketList={basketList} />
+                                    </div>
+                                    <div className="login">
+                                        <p id='welcome'>
+                                            Welcome, {user}!
+                                        </p>
+                                        <AccountModal token={token} />
+                                        <form onSubmit={Logout} id='logout'>
+                                            <button type='submit'>Logout</button>
+                                        </form>
+
+                                    </div>
+                                </>
+                        }
                     </div>
-                    {!user ?
-                        <div className="login" sx={{ bg: 'login' }}>
-                            <p>Log-in to create your smoothie!</p>
-                            <a onClick={openLoginModal}>Login</a> <a onClick={openRegisterModal}>Register</a>
-                        </div>
-
-                        :
-                        <>
-                            <div className="highZ">
-                                <Sidebar basketList={basketList} />
-                            </div>
-                            <div className="login">
-                                <p id='welcome'>
-                                    Welcome, {user}!
-                                </p>
-                                <AccountModal token={token} />
-                                <form onSubmit={Logout} id='logout'>
-                                    <button type='submit'>Logout</button>
-                                </form>
-
-                            </div>
-                        </>}
                 </div>
             </div>
             <div className='offers_container' sx={{ bg: 'offersContainer' }}>
@@ -145,7 +146,8 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                         closeRegisterModal={closeRegisterModal} user={user} registerClicked={registerClicked} setRegisterClicked={setRegisterClicked} />
                     <div className='splashPage' sx={{ bg: 'splashPage' }}>
                         <div className='innerCont'>
-                            <div className="container_headers"><p>🡗 SCRATCH & SNIFF 🡖</p></div>
+                            <div className="container_headers"><p>🡗 SCRATCH & SNIFF 🡖</p>
+                            </div>
                             <div className='animationFront'>
                             </div>
                         </div>
@@ -153,7 +155,6 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                 </>
                 :
                 <>
-
                     <div className='selectionCont'>
                         <div className='innerCont'>
                             <div className="container_headers">
@@ -198,9 +199,9 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                             </div>
                         </div>
                     </div>
-                </>}
+                </>
+            }
         </div>
-
     )
 }
 
