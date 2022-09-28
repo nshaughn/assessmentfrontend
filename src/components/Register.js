@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from "react";
 import { register } from '../utils';
 
-const Register = ({ setter, user, registerClicked, setRegisterClicked }) => {
+const Register = ({ setter, registerClicked, setRegisterClicked }) => {
     const [name, setName] = useState()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
