@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { faker } from '@faker-js/faker';
 
 const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name }, list, setList, index, price }) => {
@@ -14,7 +14,7 @@ const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name }, 
         <div>
             <div className='fruit' key={index}>
                 <div className="fruit_list_image" >
-                    <img src={require(`../images/fruitlist/${name}.png`)} alt={`Image of a(n) ${name}`} />
+                    <img src={require(`../images/fruitlist/${name}.png`)} alt={`${name}`} />
                 </div>
                 <div className='fruit_makeup'>
                     <h1>{name}</h1>
