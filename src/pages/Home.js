@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import UserModal from "../components/UserModal";
 import AccountModal from "../components/AccountModal";
 import FruitCard from "../components/FruitCard";
@@ -47,7 +47,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                 {!user ?
                     <div className="login" sx={{bg: 'login'}}>
                         <p>Log-in to create your smoothie!</p>
-                        <a onClick={openLoginModal}>Login</a> <a onClick={openRegisterModal}>Register</a>
+                        <button onClick={openLoginModal}>Login</button> <button onClick={openRegisterModal}>Register</button>
                     </div>
 
                     :
