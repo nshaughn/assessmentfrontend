@@ -21,6 +21,13 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
         console.log(basketList)
     }
 
+    const deleteFruit = (index) => {
+        let arr = [...list]
+        arr.splice(index, 1)
+        setList(arr)
+        setBasketList(arr)
+    }
+
     return (
 
         <div className="master">
@@ -158,8 +165,13 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                                     <div id="outerSelected">
                                         <div className="selectedCSS">
                                             {list?.map((name, index) => (
-                                                <p key={index}>{name}</p>
+                                                <p key={index}>{name}
+                                                    <div>
+                                                        <button onClick={() => deleteFruit(index)}>DELETE</button>
+                                                    </div>
+                                                </p>
                                             ))}
+                                            
                                         </div>
                                         <button id="addToBasket" onClick={sendBasket}>+🛒</button>
                                     </div>
