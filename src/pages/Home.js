@@ -5,8 +5,16 @@ import FruitCard from "../components/FruitCard";
 import Sidebar from '../components/Sidebar';
 import Logout from "../components/Logout";
 import "../stylesheets/Group_main.css";
+import "../stylesheets/HomeLightMode.css";
+
+import { useColorMode } from 'theme-ui';
+
+/** @jsxImportSource theme-ui */
+
 
 function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, registerClicked, setRegisterClicked }) {
+    const [colorMode, setColorMode] = useColorMode();
+
     const [list, setList] = useState([])
     const [basketList, setBasketList] = useState([])
     const [loginStateModal, showLoginStateModal] = useState(false)
@@ -30,10 +38,10 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
     return (
 
         <div className="master">
-            <div className="header_bar">
+            <div className="header_bar" sx={{bg: 'headerBar'}}>
                 <img className="logo_img" src={require("../images/smoothie_logo_v1.png")} alt='logo' />
                 {!user ?
-                    <div className="login">
+                    <div className="login" sx={{bg: 'login'}}>
                         <p>Log-in to create your smoothie!</p>
                         <a onClick={openLoginModal}>Login</a> <a onClick={openRegisterModal}>Register</a>
                     </div>
@@ -56,7 +64,11 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                     </>}
             </div>
 
-            <div className='offers_container'>
+            <button sx={{bg: 'black', color: 'white'}} id="toggle" onClick={()=> setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
+               toggle {colorMode === 'light' ? 'Dark': 'light'} <div className="indicator"></div>
+            </button>
+
+            <div className='offers_container' sx={{bg: 'offersContainer'}}>
 
                 {/* Card 1 */}
                 <div className="offers offers_red">
@@ -125,7 +137,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                     <UserModal setter={setUser} setToken={setToken} toggle={toggle} setToggle={setToggle} loginStateModal={loginStateModal}
                         registerStateModal={registerStateModal} showRegisterStateModal={showRegisterStateModal} closeLoginModal={closeLoginModal}
                         closeRegisterModal={closeRegisterModal} user={user} registerClicked={registerClicked} setRegisterClicked={setRegisterClicked} />
-                    <div className='splashPage'>
+                    <div className='splashPage' sx={{bg: 'splashPage'}}>
                         <div className='innerCont'>
                             <div className="container_headers"><p>🡗 SCRATCH & SNIFF 🡖</p></div>
                             <div className='animationFront'>
