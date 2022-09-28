@@ -14,15 +14,19 @@ import { useColorMode } from 'theme-ui';
 
 function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, registerClicked, setRegisterClicked }) {
     const [colorMode, setColorMode] = useColorMode();
-
-    const [list, setList] = useState([])
-    const [basketList, setBasketList] = useState([])
-    const [loginStateModal, showLoginStateModal] = useState(false)
-    const [registerStateModal, showRegisterStateModal] = useState(false)
+    const [slide, setSlide] = useState(false);
+    const [list, setList] = useState([]);
+    const [basketList, setBasketList] = useState([]);
+    const [loginStateModal, showLoginStateModal] = useState(false);
+    const [registerStateModal, showRegisterStateModal] = useState(false);
     function openLoginModal() { showLoginStateModal(true); }
     function openRegisterModal() { showRegisterStateModal(true); }
     function closeLoginModal() { showLoginStateModal(false); }
     function closeRegisterModal() { showRegisterStateModal(false); }
+
+    const slideClass = () => {
+        setSlide(!slide)
+    }
 
     const sendBasket = () => {
         setBasketList(list)
@@ -64,8 +68,8 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                     </>}
             </div>
 
-            <button sx={{bg: 'black', color: 'white'}} id="toggle" onClick={()=> setColorMode(colorMode === 'light' ? 'dark' : 'light')}>
-               toggle {colorMode === 'light' ? 'Dark': 'light'} <div className="indicator"></div>
+            <button className={slide?'slide':null} sx={{bg: 'black', color: 'white'}} id="slide" onClick={()=> {setColorMode(colorMode === 'light' ? 'dark' : 'light');slideClass()}}>
+            <div className="indicator"></div>
             </button>
 
             <div className='offers_container' sx={{bg: 'offersContainer'}}>
