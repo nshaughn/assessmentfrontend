@@ -43,8 +43,13 @@ function Sidebar({ basketList }) {
                                             </div>
                                         </div>
                                     ) : (
-                                        <div className="addedItems emptyBasket">
-                                            <p>BASKET<br />IS<br />EMPTY!</p>
+                                        <div className="sizeBox">
+                                            <div className="yourSmoothie">
+                                                <p>C'MON,<br />CHOOSE!</p>
+                                            </div>
+                                            <div className="addedItems emptyBasket">
+                                                <p>BASKET<br />IS<br />EMPTY!</p>
+                                            </div>
                                         </div>
                                     )}
                                 </div>
@@ -53,9 +58,9 @@ function Sidebar({ basketList }) {
                                 <div>
                                     {/* <button className="sendCheckout">Checkout</button> */}
 
-                                        <form onSubmit={Checkout}>
-                                            <button className="sendCheckout" type='submit'>Checkout</button>
-                                        </form>
+                                    <form onSubmit={Checkout}>
+                                        <button className="sendCheckout" type='submit'>Checkout</button>
+                                    </form>
 
                                 </div>
                                 {/* </Link> */}

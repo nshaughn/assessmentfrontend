@@ -85,23 +85,6 @@ p {
     align-items: center;
 }
 
-.css-1s1xj8e-Home {
-    color: var(--p_text_color);
-    float: right;
-    padding: 5px;
-    text-decoration: none;
-    align-self: flex-end;
-    height: 20%;
-    opacity: 0.9;
-    text-align: center;
-    min-width: 250px;
-    height: max-content;
-    box-shadow: var(--shadow_sub);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
 #logout button:hover{
     background-image: linear-gradient(to bottom, #6723c0, #1e75c7);
     cursor: pointer;
@@ -121,7 +104,7 @@ p {
     border-bottom: var(--borders_sub);
 }
 
-.login a {
+.login button {
     color: white;
     min-width: 100px;
     display: inline-block;
@@ -129,6 +112,7 @@ p {
     font-weight: bold;
     padding: 8px;
     background-image: linear-gradient(to bottom, #014d1e, #006627);
+    border: none;
     border-bottom: var(--borders_sub);
 }
 
@@ -138,12 +122,7 @@ p {
     padding-right: 10px;
 }
 
-#welcome {
-    width: 20%;
-    font-weight: bold;
-}
-
-.login a:hover{
+.login button:hover{
     background-image: linear-gradient(to bottom, #6723c0, #1e75c7);
     cursor: pointer;
     border-bottom: var(--borders_sub);
