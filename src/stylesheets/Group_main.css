@@ -126,7 +126,7 @@ p {
 .selectionCont {
     display: flex;
     justify-content: space-evenly;
-    width: var(--page_width);
+    max-width: var(--page_width);
     padding: 10px;
     margin: auto;
     background-image: linear-gradient(to bottom left, #3d033a, #3d033a);
@@ -157,7 +157,14 @@ p {
     background-size: cover;
 }
 
-.innerCont {
+.innerCont_L {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.innerCont_R {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -184,6 +191,7 @@ p {
     padding-left: 20px;
     padding-right: 20px;
     border-bottom: solid black 1px;
+
 }
 
 .fruit:hover {
@@ -205,8 +213,9 @@ p {
 
 .fruit h1 {
     width: 220px;
-    text-align: right;
+    text-align: center;
     padding-right: 20px;
+    /* background-color: red; */
 }
 
 
@@ -263,6 +272,7 @@ p {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.37);
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .selectedCSS {
@@ -272,7 +282,7 @@ p {
     font-size:1.5em;
     overflow-y: scroll;
     padding-left: 18px;
-    height: 100%;
+    height: 95%;
     /* background-color: rgba(255, 255, 255, 0.37); */
     margin-bottom: 8px;
     border-radius: 10px;
@@ -290,12 +300,14 @@ p {
 
 .fruit_list_image {
     display: flex;
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .fruit_list_image img { 
     object-fit:contain;
-    width: 100%;
+    width: 50px;
     height: 50px;
 }
 
