@@ -40,39 +40,42 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
     }
 
     return (
-
         <div className="master">
-            <div className="header_bar" sx={{bg: 'headerBar'}}>
+            <div className="header_bar" sx={{ bg: 'headerBar' }}>
                 <img className="logo_img" src={require("../images/smoothie_logo_v1.png")} alt='logo' />
-                {!user ?
-                    <div className="login" sx={{bg: 'login'}}>
-                        <p>Log-in to create your smoothie!</p>
-                        <button onClick={openLoginModal}>Login</button> <button onClick={openRegisterModal}>Register</button>
+
+                <div className="outerFlex">
+                    <div className="toggleFlex">
+                        <button className={slide ? 'slide' : null} sx={{ bg: 'black', color: 'white' }} id="slide" onClick={() => { setColorMode(colorMode === 'light' ? 'dark' : 'light'); slideClass() }}>
+                            <div className="indicator">{colorMode === 'light' ? '🌚' : '🌝'}</div>
+                        </button>
+
+                        {!user ?
+                            <div className="login" sx={{bg: 'login'}}>
+                                <p>Log-in to create your smoothie!</p>
+                                <button onClick={openLoginModal}>Login</button> <button onClick={openRegisterModal}>Register</button>
+                            </div>
+                            :
+                                <>
+                                    <div className="highZ">
+                                        <Sidebar basketList={basketList} />
+                                    </div>
+                                    <div className="login">
+                                        <p id='welcome'>
+                                            Welcome, {user}!
+                                        </p>
+                                        <AccountModal token={token} />
+                                        <form onSubmit={Logout} id='logout'>
+                                            <button type='submit'>Logout</button>
+                                        </form>
+
+                                    </div>
+                                </>
+                        }
                     </div>
-
-                    :
-                    <>
-                        <div className="highZ">
-                            <Sidebar basketList={basketList} />
-                        </div>
-                        <div className="login">
-                            <p id='welcome'>
-                                Welcome, {user}!
-                            </p>
-                            <AccountModal token={token} />
-                            <form onSubmit={Logout} id='logout'>
-                                <button type='submit'>Logout</button>
-                            </form>
-
-                        </div>
-                    </>}
+                </div>
             </div>
-
-            <button className={slide?'slide':null} sx={{bg: 'black', color: 'white'}} id="slide" onClick={()=> {setColorMode(colorMode === 'light' ? 'dark' : 'light');slideClass()}}>
-            <div className="indicator"></div>
-            </button>
-
-            <div className='offers_container' sx={{bg: 'offersContainer'}}>
+            <div className='offers_container' sx={{ bg: 'offersContainer' }}>
 
                 {/* Card 1 */}
                 <div className="offers offers_red">
@@ -141,9 +144,10 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                     <UserModal setter={setUser} setToken={setToken} toggle={toggle} setToggle={setToggle} loginStateModal={loginStateModal}
                         registerStateModal={registerStateModal} showRegisterStateModal={showRegisterStateModal} closeLoginModal={closeLoginModal}
                         closeRegisterModal={closeRegisterModal} user={user} registerClicked={registerClicked} setRegisterClicked={setRegisterClicked} />
-                    <div className='splashPage' sx={{bg: 'splashPage'}}>
+                    <div className='splashPage' sx={{ bg: 'splashPage' }}>
                         <div className='innerCont'>
-                            <div className="container_headers"><p>🡗 SCRATCH & SNIFF 🡖</p></div>
+                            <div className="container_headers"><p>🡗 SCRATCH & SNIFF 🡖</p>
+                            </div>
                             <div className='animationFront'>
                             </div>
                         </div>
@@ -151,7 +155,6 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                 </>
                 :
                 <>
-
                     <div className='selectionCont'>
                         <div className='innerCont'>
                             <div className="container_headers">
@@ -196,9 +199,9 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                             </div>
                         </div>
                     </div>
-                </>}
+                </>
+            }
         </div>
-
     )
 }
 
