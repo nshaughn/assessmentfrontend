@@ -28,19 +28,22 @@ function Sidebar({ basketList }) {
                         </li>
                         <div className="makeFit">
                             <div className="outerBasket">
-                                {/* <div> */}
-                                    <h1 className='h1Text'>Basket</h1>
-                                {/* </div> */}
+                                <h1 className='h1Text'>Basket</h1>
                                 <div className="addedCont">
                                     {basketList?.length > 0 ? (
-                                        <div className="addedItems">
-                                            {basketList?.map((name, index) => (
-                                                <p key={index}>{name}</p>
-                                            ))}
+                                        <div className="sizeBox">
+                                            <div className="yourSmoothie">
+                                                <p>YOUR<br />SMOOTHIE:</p>
+                                            </div>
+                                            <div className="addedItems fillBasket">
+                                                {basketList?.map((name, index) => (
+                                                    <p key={index}>{name}</p>
+                                                ))}
+                                            </div>
                                         </div>
                                     ) : (
-                                        <div className="addedItems">
-                                            <h1>Basket is empty!</h1>
+                                        <div className="addedItems emptyBasket">
+                                            <p>BASKET<br />IS<br />EMPTY!</p>
                                         </div>
                                     )}
                                 </div>

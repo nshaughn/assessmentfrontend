@@ -176,13 +176,11 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                                     <div id="outerSelected">
                                         <div className="selectedCSS">
                                             {list?.map((name, index) => (
-                                                <p key={index}>{name}
-                                                    <div>
-                                                        <button onClick={() => deleteFruit(index)}>DELETE</button>
-                                                    </div>
+                                                <p key={index}>{name}&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <button onClick={() => deleteFruit(index)} className="delete">☠</button>
                                                 </p>
                                             ))}
-                                            
+
                                         </div>
                                         <button id="addToBasket" onClick={sendBasket}>+🛒</button>
                                     </div>

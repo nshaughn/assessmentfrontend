@@ -333,6 +333,23 @@ p {
     box-shadow: 0px 0px 3px 3px greenyellow;
 }
 
+.delete {
+    font-size: 1em;
+    background: none;
+    border: none;
+    color: white;
+}
+
+.delete:hover {
+    animation: grow 0.5s infinite;
+    color: rgb(122, 122, 122);
+}
+
+.delete:active {
+    color: red;
+    transform: translateY(2px);
+}
+
 @keyframes hoverOver {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
