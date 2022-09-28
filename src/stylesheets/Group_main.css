@@ -44,10 +44,22 @@ p {
     margin: auto;
     height: 100px;
     /* background-image: linear-gradient(to top, #400a5f, #2c0642); */
-
+    /* border: solid white; */
     box-shadow: var(--shadow_main);
+}
 
+.outerFlex {
+    display: flex;
+    align-items: flex-end;
+}
 
+.toggleFlex {
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 15px;
+    justify-content: center;
 }
 
 .logo_img {
