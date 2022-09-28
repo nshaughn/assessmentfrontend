@@ -167,7 +167,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                 <>
 
                     <div className='selectionCont'>
-                        <div className='innerCont_L'>
+                        <div className='innerCont'>
                             <div className="container_headers">
                                 <p>Click the ingredient to build your smoothie:</p>
                             </div>
@@ -185,7 +185,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                                 )}
                             </div>
                         </div>
-                        <div className='innerCont_R'>
+                        <div className='innerCont'>
                             <div className="container_headers">
                                 <p>Your smoothie:</p>
                             </div>
