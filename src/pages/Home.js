@@ -52,51 +52,58 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
 
                 {/* Card 1 */}
                 <div className="offers offers_red">
-                    <img src={require("../images/smoothie_offers/smoothie_red.png")} alt='Red Smoothie' />
-                         
-                         
-                         <div className="ingredients">
+                    <div class="desktop">
+                        <img src={require("../images/smoothie_offers/smoothie_red.png")} alt='Red Smoothie' />
+                    </div>
+                    <div class="mobile">
+                        <null/>
+                    </div>
+                        
+                        <div className="ingredients">
                             <h1>Red Special Offer</h1>
                             <p>Red apple</p>
                             <p>Lychee</p>
                             <p>Strawberry</p>
                             <div className="price"><p>Remarkable price! Only £12</p></div>
-                         </div>
-
-
-
+                        </div>
                 </div>
 
 
-                  
+                
                 {/* Card 2 */}
                 <div className='offers offers_mixed'>
-                <img src={require("../images/smoothie_offers/smoothie_mixed.png")} alt='Mixed smoothie' />
-                         
-                         
-                         <div className="ingredients">
+                    <div class="desktop">
+                        <img src={require("../images/smoothie_offers/smoothie_mixed.png")} alt='Mixed smoothie' />
+                    </div>
+                    <div class="mobile">
+                        <null/>
+                    </div>
+                        <div className="ingredients">
                             <h1>Mixed Special Offer</h1>
                             <p>Green Apple</p>
                             <p>Banana</p>
                             <p>Watermelon</p>
                             <div className="price"><p>Remarkable price! Only £12</p></div>
-                         </div>
+                        </div>
 
                 </div>
                 
                 
                 {/* Card 3 */}
                 <div className='offers offers_yellow'>
-
-                <img src={require("../images/smoothie_offers/smoothie_yellow.png")} alt='Yellow Smoothie' />    
-                
-                         <div className="ingredients">
+                <div class="desktop">
+                    <img src={require("../images/smoothie_offers/smoothie_yellow.png")} alt='Yellow Smoothie' />  
+                </div>
+                <div class="mobile">
+                    <null/>
+                </div>
+                        <div className="ingredients">
                             <h1>Yellow Special Offer</h1>
                             <p>Apricot</p>
                             <p>Lemon</p>
                             <p>Orange</p>
                             <div className="price"><p>Remarkable price! Only £12</p></div>
-                         </div>
+                        </div>
 
                 </div>
 

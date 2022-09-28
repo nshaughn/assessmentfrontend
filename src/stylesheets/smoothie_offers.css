@@ -7,8 +7,7 @@
 
      --smoothie_img_bg: linear-gradient(to bottom, rgba(235, 194, 235, 0.4), 
      rgba(255, 185, 238, 0.4)); 
- }
- 
+}
 
 
 .offers_container {
@@ -29,7 +28,6 @@
 
 .offers {
      display: flex;
-
 
      border: var(--borders_sub);
      width: 30%;
@@ -56,15 +54,10 @@
 
      font-size: 16pt;
      width: 100%;
-
-
 }
 
 
-
-
 .offers_red {
-
      background-image: var(--offers_red_bg);
 }
 
@@ -76,13 +69,25 @@
      background-image: var(--offers_yellow_bg);
 }
 
+.desktop, .mobile {
+     display: none;
+}
+@media (orientation: landscape) {
+     .offers img {
+          background-image: var(--smoothie_img_bg);
+          height: 100%;
 
-.offers img {
-     background-image: var(--smoothie_img_bg);
-     height: 100%;
-
-     display: inline-block;
-     margin-left: 10px;
+          display: inline-block;
+          margin-left: -60px;
+     }
+     .desktop {
+          display: inline-block;
+     }
+}
+@media (orientation: portrait) {
+     .mobile {
+          display: inline-block;
+     }
 }
 
 
@@ -90,26 +95,33 @@
      margin-left: 10px;
      width: 70%;
      align-self: center;
-
 }
 
 .ingredients h1 {
      color: var(--offers_h1);
-     font-size: var(--offers_h1_size);
+     font-size: 17pt;
      background-color: var(--offers_ribbon);
      text-shadow: 0px 2px 7px #680a65;
+}
+@media (orientation: portrait) { 
+     .ingredients h1 {
+          font-size: 13pt;
+          /* padding: 5px 28px 5px 28px; */
+     }
 }
 
 .ingredients p {
      align-items: center;
-
-     font-size: pt;
+     font-size: 15pt;
      padding-top: 5px;
-
+}
+@media (orientation: portrait) { 
+     .ingredients p {
+          font-size:12pt;
+     }
 }
 
 .price p {
-
      padding-bottom: 5px;
      text-align: right;
      padding-right: 10px;
@@ -119,6 +131,12 @@
      font-weight: bold;;
      color: rgb(252, 248, 204);
      text-shadow: 0px 2px 7px #680a65;
+}
+@media (orientation: portrait) { 
+     .price p {
+          
+          font-size: 10pt;
+     }
 }
 
 @keyframes rainbow {
