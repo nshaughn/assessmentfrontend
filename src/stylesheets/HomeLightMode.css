@@ -3,7 +3,7 @@
     background: #e4e4e4;
   }
 
- #toggle{
+ #slide{
     position: relative;
     display: block;
     width: 50px;
@@ -18,7 +18,7 @@
 }
 
  
-#toggle .indicator{
+#slide .indicator{
     position: absolute;
     top: 0;
     left: 0;
@@ -34,7 +34,7 @@
 }
 
 
-#toggle.active .indicator {
+#slide.slide .indicator {
     left: 25px;
     background-image: linear-gradient(180deg, #4cc9f0 50%, #f72585 100%)
 }
