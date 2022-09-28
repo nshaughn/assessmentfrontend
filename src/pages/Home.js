@@ -8,12 +8,18 @@ import "../stylesheets/Group_main.css";
 
 function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, registerClicked, setRegisterClicked }) {
     const [list, setList] = useState([])
+    const [basketList, setBasketList] = useState([])
     const [loginStateModal, showLoginStateModal] = useState(false)
     const [registerStateModal, showRegisterStateModal] = useState(false)
     function openLoginModal() { showLoginStateModal(true); }
     function openRegisterModal() { showRegisterStateModal(true); }
     function closeLoginModal() { showLoginStateModal(false); }
     function closeRegisterModal() { showRegisterStateModal(false); }
+
+    const sendBasket = () => {
+        setBasketList(list)
+        console.log(basketList)
+    }
 
     return (
 
@@ -29,7 +35,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                     :
                     <>
                         <div className="highZ">
-                            <Sidebar />
+                            <Sidebar basketList={basketList} />
                         </div>
                         <div className="login">
                             <p id='welcome'>
@@ -155,7 +161,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                                                 <p key={index}>{name}</p>
                                             ))}
                                         </div>
-                                        <button id="addToBasket" type="submit">+🛒</button>
+                                        <button id="addToBasket" onClick={sendBasket}>+🛒</button>
                                     </div>
                                 ) : (
                                     <div className="selectedCSS">

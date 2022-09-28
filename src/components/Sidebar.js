@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 import "../stylesheets/Sidebar.css"
 
-function Sidebar({ }) {
+function Sidebar({ basketList }) {
     const [sidebar, setSidebar] = useState(false)
     const showSidebar = () => setSidebar(!sidebar)
     // useEffect(()=> {
@@ -57,7 +57,7 @@ function Sidebar({ }) {
                                     })} */}
                             </div>
                                 <div className="addedItems">
-                                    <p>added items will be here</p>
+                                    <p>{basketList}</p>
                                 </div>
                             {/* <p className="runningTotal">£{total}</p> */}
                             {/* <Link to="/checkout"> */}

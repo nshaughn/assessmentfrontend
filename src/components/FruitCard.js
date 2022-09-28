@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import { faker } from '@faker-js/faker';
 import FakePrice from './Faker';
 
-const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name }, list, setList, index, price }) => {
+const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name }, list, setList, index }) => {
     // const [selected, setSelected] = useState([])
     // // const [total, setTotal] = useState(0)
     // const [list, setList] = useState()
@@ -12,16 +12,6 @@ const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name }, 
         console.log(list)
     }
     
-    // useEffect(() => {
-        //     let num = 0
-        //     for (let i = 0; i < smoothie.length; i++){
-            //         num += Number(smoothie[i].name)
-            //     }
-            //     setTotal(num.toFixed[2])
-            // }, [smoothie, setTotal])
-            
-    // e.prevent.default()
-    // price = Math.ceil(faker.datatype.number() / 40000)
     return (
         <div>
             <div className='fruit' key={index}>
