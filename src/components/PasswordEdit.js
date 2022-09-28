@@ -1,10 +1,9 @@
 import React from 'react'
 import { useState } from "react";
 import { editPassword } from '../utils';
-
 import { getCookie } from '../common';
 
-const PasswordEdit = ({ token }) => {
+const PasswordEdit = () => {
     const [password, setPassword] = useState()
 
     const submitHandler = async (event) => {
