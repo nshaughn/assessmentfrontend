@@ -19,7 +19,7 @@
      margin: auto;
 
      padding: 10px;
-     height: 20vh;
+     min-height: 170px;
      box-shadow: var(--shadow_main);
 
      text-align: center;
@@ -31,7 +31,7 @@
 
      border: var(--borders_sub);
      width: 30%;
-     height: 95%;
+     min-height: 170px;
      cursor: pointer;
 }
 
@@ -51,9 +51,9 @@
 .offers h1 {
      display: inline-block;
      padding: 5px;
-
+     margin-top: 10px;
      font-size: 16pt;
-     width: 100%;
+     width: 90%;
 }
 
 
@@ -88,7 +88,14 @@
      .mobile {
           display: inline-block;
      }
-}
+
+/* .offers img {
+     background-image: var(--smoothie_img_bg);
+     max-height: 170px;
+
+     display: inline-block;
+     margin-left: 10px;
+} */
 
 
 .ingredients {

@@ -1,6 +1,6 @@
 import { writeCookie } from "../common";
 
-export const register = async (name, email, password) => {
+export const register = async (name, email, password, setter) => {
     try {
         const response = await fetch(`${process.env.REACT_APP_USER_API}signup`, {
             method: "POST",
@@ -13,6 +13,9 @@ export const register = async (name, email, password) => {
         });
         const data = await response.json()
         console.log(data)
+        console.log(data.token)
+        setter(data.name)
+        writeCookie("jwt_token", data.token, 7)
     } catch (error) {
         console.log(error)
     }
@@ -32,8 +35,6 @@ export const login = async (email, password, setter) => {
         console.log(data.token)
         setter(data.name)
         writeCookie("jwt_token", data.token, 7)
-        // return data.token
-
     } catch (error) {
         console.log(error)
     }

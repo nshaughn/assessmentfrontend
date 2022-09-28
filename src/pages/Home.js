@@ -6,7 +6,7 @@ import Sidebar from '../components/Sidebar';
 import Logout from "../components/Logout";
 import "../stylesheets/Group_main.css";
 
-function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
+function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, registerClicked, setRegisterClicked }) {
     const [list, setList] = useState([])
     const [loginStateModal, showLoginStateModal] = useState(false)
     const [registerStateModal, showRegisterStateModal] = useState(false)
@@ -15,19 +15,11 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
     function closeLoginModal() { showLoginStateModal(false); }
     function closeRegisterModal() { showRegisterStateModal(false); }
 
-    // const logout = async () => {
-    //     let name = 'jwt_token'
-    //     document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;'
-    //   }
-
     return (
 
         <div className="master">
             <div className="header_bar">
                 <img className="logo_img" src={require("../images/smoothie_logo_v1.png")} alt='logo' />
-                <div className="highZ">
-                    <Sidebar />
-                </div>
                 {!user ?
                     <div className="login">
                         <p>Log-in to create your smoothie!</p>
@@ -35,23 +27,28 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                     </div>
 
                     :
+                    <>
+                        <div className="highZ">
+                            <Sidebar />
+                        </div>
+                        <div className="login">
+                            <p id='welcome'>
+                                Welcome, {user}!
+                            </p>
+                            <AccountModal token={token} />
+                            <form onSubmit={Logout} id='logout'>
+                                <button type='submit'>Logout</button>
+                            </form>
 
-                    <div className="login">
-                        <p id='welcome'>
-                            Welcome, {user}! 
-                        </p>
-                        <AccountModal token={token} />
-                        <form onSubmit={Logout} id='logout'>
-                            <button type='submit'>Logout</button>
-                        </form>
-                        
-                    </div>}
+                        </div>
+                    </>}
             </div>
 
             <div className='offers_container'>
 
                 {/* Card 1 */}
                 <div className="offers offers_red">
+<<<<<<< HEAD
                     <div class="desktop">
                         <img src={require("../images/smoothie_offers/smoothie_red.png")} alt='Red Smoothie' />
                     </div>
@@ -85,12 +82,44 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                             <p>Watermelon</p>
                             <div className="price"><p>Remarkable price! Only £12</p></div>
                         </div>
+=======
+                    <img src={require("../images/smoothie_offers/smoothie_red.png")} alt='Red Smoothie' />
+
+
+                    <div className="ingredients">
+                        <h1>Red Special Offer</h1>
+                        <p>Red apple</p>
+                        <p>Lychee</p>
+                        <p>Strawberry</p>
+                        <div className="price"><p>Remarkable price! Only £12</p></div>
+                    </div>
+
+
 
                 </div>
-                
-                
+
+
+
+                {/* Card 2 */}
+                <div className='offers offers_mixed'>
+                    <img src={require("../images/smoothie_offers/smoothie_mixed.png")} alt='Mixed smoothie' />
+
+
+                    <div className="ingredients">
+                        <h1>Mixed Special Offer</h1>
+                        <p>Green Apple</p>
+                        <p>Banana</p>
+                        <p>Watermelon</p>
+                        <div className="price"><p>Remarkable price! Only £12</p></div>
+                    </div>
+>>>>>>> 7a73a845bf8bc3e1052bfddfa4aaca5fee099506
+
+                </div>
+
+
                 {/* Card 3 */}
                 <div className='offers offers_yellow'>
+<<<<<<< HEAD
                 <div class="desktop">
                     <img src={require("../images/smoothie_offers/smoothie_yellow.png")} alt='Yellow Smoothie' />  
                 </div>
@@ -104,6 +133,18 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                             <p>Orange</p>
                             <div className="price"><p>Remarkable price! Only £12</p></div>
                         </div>
+=======
+
+                    <img src={require("../images/smoothie_offers/smoothie_yellow.png")} alt='Yellow Smoothie' />
+
+                    <div className="ingredients">
+                        <h1>Yellow Special Offer</h1>
+                        <p>Apricot</p>
+                        <p>Lemon</p>
+                        <p>Orange</p>
+                        <div className="price"><p>Remarkable price! Only £12</p></div>
+                    </div>
+>>>>>>> 7a73a845bf8bc3e1052bfddfa4aaca5fee099506
 
                 </div>
 
@@ -113,7 +154,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                 <>
                     <UserModal setter={setUser} setToken={setToken} toggle={toggle} setToggle={setToggle} loginStateModal={loginStateModal}
                         registerStateModal={registerStateModal} showRegisterStateModal={showRegisterStateModal} closeLoginModal={closeLoginModal}
-                        closeRegisterModal={closeRegisterModal} />
+                        closeRegisterModal={closeRegisterModal} user={user} registerClicked={registerClicked} setRegisterClicked={setRegisterClicked} />
                     <div className='splashPage'>
                         <div className='innerCont'>
                             <div className="container_headers"><p>🡗 SCRATCH & SNIFF 🡖</p></div>
@@ -126,9 +167,9 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                 <>
 
                     <div className='selectionCont'>
-                        <div className='innerCont'>
+                        <div className='innerCont_L'>
                             <div className="container_headers">
-                                <p>Click the ingredient to build your smoothie:</p>                            
+                                <p>Click the ingredient to build your smoothie:</p>
                             </div>
                             <div className='selectionBoxes'>
                                 {fruits?.length > 0 ? (
@@ -144,16 +185,19 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle }) {
                                 )}
                             </div>
                         </div>
-                        <div className='innerCont'>
+                        <div className='innerCont_R'>
                             <div className="container_headers">
                                 <p>Your smoothie:</p>
                             </div>
                             <div className='selectionBoxes'>
                                 {list?.length > 0 ? (
-                                    <div className="selectedCSS">
-                                        {list?.map((name, index) => (
-                                            <p key={index}>{name}</p>
-                                        ))}
+                                    <div id="outerSelected">
+                                        <div className="selectedCSS">
+                                            {list?.map((name, index) => (
+                                                <p key={index}>{name}</p>
+                                            ))}
+                                        </div>
+                                        <button id="addToBasket" type="submit">+🛒</button>
                                     </div>
                                 ) : (
                                     <div className="selectedCSS">

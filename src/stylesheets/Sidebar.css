@@ -2,8 +2,8 @@
     position: fixed;
     right: -258px;
     top: 0%;
-    background: none;
-    display: flex;
+    /* background: none; */
+    /* display: flex; */
     transition: 850ms;
     height: 100%;
 }
@@ -31,11 +31,9 @@
 .side-menu { /* This is like the background of the sidebar */
     width: 250px;
     height: 99.3%;
-    display: flex;
-    justify-content: center;
     border: solid rgb(236, 92, 224);
     border-right: none;
-    /* background: rgb(62,62,62); */
+    background: rgb(62,62,62);
     background: linear-gradient(0deg,#f72585 43%, #4cc9f0 83%);
     opacity: 0.99;
 }
@@ -50,7 +48,14 @@
     background-color: rgba(169, 169, 169, 0.658);
     width: 210px;
     height: 35px;
-    text-align: center;
+    border-radius: 15px;
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+    border: none;
+    background-color: rgb(185, 44, 204);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .side-text {
@@ -93,16 +98,45 @@
     align-items: center;
 }
 
+.outerBasket {
+    /* border: solid black; */
+    display: flex;
+    flex-direction: column;
+    height: 98%;
+    width: 95%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    left: 5px;
+    bottom: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .basketContents {
-    margin-top: -50px;
+    /* margin-top: -50px;
     margin-left: -34px;
     height: 85vh;
     width: 116%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    overflow: scroll;
+    align-content: space-between;
+    overflow: scroll; */
+    display: flex;
+    flex-direction: column;
+    /* border: solid green; */
+    /* height: 100%; */
+}
+
+.addedItems {
+    /* display: flex; */
+    /* border: solid green; */
+    height: 80%;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.468);
+    border-radius: 15px;
+    padding: 10px;
 }
 
 ::-webkit-scrollbar {
@@ -138,22 +172,25 @@
     margin-top: 0.75em;
     padding: 1em;
     height: 4em;
-    color: rgb(255, 255, 255);
+    color: #f72585;
+    font-weight: 1000;
     border: solid rgb(236, 92, 224);
     border-radius: 100px 15px 15px 100px;
-    border-right: none;
-    background: rgb(2, 1, 10);
     transition: 0.2s;
     width: 80px;
     cursor: pointer;
+    border-right: none;
+    background: rgb(62,62,62);
+    background: linear-gradient(270deg,#f72585 3%, #4cc9f0 63%);
 }
 
 .sendCheckout { /* This is the Checkout button */
     width: 50%;
-    margin-left: 20px;
-    margin-top: 15px;
+    border-radius: 15px;
+    /* margin-left: 20px; */
+    /* margin-top: 15px; */
     padding: 1.5em;
-    color: black;
+    color: rgb(255, 255, 255);
     border: none;
     background-color: rgb(185, 44, 204);
     border: white 2px solid;
@@ -166,7 +203,7 @@
     cursor: pointer;
 }
 .sendCheckout:active {
-    transform: translateY(3px);
+    /* transform: translateY(3px); */
     background-color: rgb(122, 29, 134);
 }
 
