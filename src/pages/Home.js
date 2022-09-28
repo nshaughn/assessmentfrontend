@@ -6,6 +6,10 @@ import Sidebar from '../components/Sidebar';
 import Logout from "../components/Logout";
 import "../stylesheets/Group_main.css";
 
+import "../stylesheets/HomeLightMode.css";
+import { useColorMode } from 'theme-ui';
+/** @jsxImportSource theme-ui */
+
 function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, registerClicked, setRegisterClicked }) {
     const [list, setList] = useState([])
     const [loginStateModal, showLoginStateModal] = useState(false)
