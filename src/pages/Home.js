@@ -6,6 +6,7 @@ import Sidebar from '../components/Sidebar';
 import Logout from "../components/Logout";
 import "../stylesheets/Group_main.css";
 import "../stylesheets/HomeLightMode.css";
+import "../stylesheets/Header_animation.css";
 
 import { useColorMode } from 'theme-ui';
 
@@ -43,7 +44,21 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
         <div className="master">
             <div className="header_bar" sx={{ bg: 'headerBar' }}>
                 <img className="logo_img" src={require("../images/smoothie_logo_v1.png")} alt='logo' />
-
+                <div className="sp-container">
+                    <div className="sp-containerInner">
+                        <h2 className="frame-1">AWESOME</h2>
+                        <h2 className="frame-2">REFRESHING</h2>
+                        <h2 className="frame-3">TASTEFUL</h2>
+                        <h2 className="frame-4">MOIST!</h2>
+                    </div>
+                    <div className="sp-message">
+                        <h2 className="frame-5">
+                            <span>HAVE &nbsp;&nbsp;A</span>
+                            <span>SMOOTH</span>
+                            <span>EXPERIENCE</span>
+                        </h2>
+                    </div>
+                </div>
                 <div className="outerFlex">
                     <div className="toggleFlex">
                         <button className={slide ? 'slide' : null} sx={{ bg: 'black', color: 'white' }} id="slide" onClick={() => { setColorMode(colorMode === 'light' ? 'dark' : 'light'); slideClass() }}>
@@ -51,26 +66,26 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                         </button>
 
                         {!user ?
-                            <div className="login" sx={{bg: 'login'}}>
+                            <div className="login" sx={{ bg: 'login' }}>
                                 <p>Log-in to create your smoothie!</p>
                                 <button onClick={openLoginModal}>Login</button> <button onClick={openRegisterModal}>Register</button>
                             </div>
                             :
-                                <>
-                                    <div className="highZ">
-                                        <Sidebar basketList={basketList} />
-                                    </div>
-                                    <div className="login">
-                                        <p id='welcome'>
-                                            Welcome, {user}!
-                                        </p>
-                                        <AccountModal token={token} />
-                                        <form onSubmit={Logout} id='logout'>
-                                            <button type='submit'>Logout</button>
-                                        </form>
+                            <>
+                                <div className="highZ">
+                                    <Sidebar basketList={basketList} />
+                                </div>
+                                <div className="login">
+                                    <p id='welcome'>
+                                        Welcome, {user}!
+                                    </p>
+                                    <AccountModal token={token} />
+                                    <form onSubmit={Logout} id='logout'>
+                                        <button type='submit'>Logout</button>
+                                    </form>
 
-                                    </div>
-                                </>
+                                </div>
+                            </>
                         }
                     </div>
                 </div>
