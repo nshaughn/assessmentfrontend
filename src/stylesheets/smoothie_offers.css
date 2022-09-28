@@ -19,7 +19,7 @@
      margin: auto;
 
      padding: 10px;
-     min-height: 170px;
+     height: 170px;
      box-shadow: var(--shadow_main);
 
      text-align: center;
@@ -28,10 +28,10 @@
 
 .offers {
      display: flex;
-
+     justify-content: space-between;
      border: var(--borders_sub);
      width: 30%;
-     min-height: 170px;
+     height: 100%;
      cursor: pointer;
 }
 
@@ -73,12 +73,10 @@
      display: none;
 }
 @media (orientation: landscape) {
-     .offers img {
+     .offerImg {
           background-image: var(--smoothie_img_bg);
           height: 100%;
-
           display: inline-block;
-          margin-left: -60px;
      }
      .desktop {
           display: inline-block;
@@ -99,9 +97,14 @@
 
 
 .ingredients {
-     margin-left: 10px;
-     width: 70%;
+     display: flex;
+     flex-direction: column;
+     /* flex-grow: 1; */
+     /* margin-left: 10px; */
+     width: 71%;
      align-self: center;
+     justify-items: flex-start;
+     /* border: solid pink; */
 }
 
 .ingredients h1 {
@@ -113,7 +116,21 @@
 @media (orientation: portrait) { 
      .ingredients h1 {
           font-size: 13pt;
+          text-align: center;
+          width: 95.5%;
           /* padding: 5px 28px 5px 28px; */
+     }
+     .ingredients {
+          width: 100%;
+          display: flex;
+          /* border: solid green; */
+          justify-content: center;
+     }
+     .ingredients p {
+          font-size:12pt;
+     }
+     .price {
+          align-self: center;
      }
 }
 
@@ -121,23 +138,28 @@
      align-items: center;
      font-size: 15pt;
      padding-top: 5px;
+     width: 100%;
 }
-@media (orientation: portrait) { 
+/* @media (orientation: portrait) { 
      .ingredients p {
           font-size:12pt;
      }
-}
+} */
 
+/* .price {
+
+} */
 .price p {
-     padding-bottom: 5px;
-     text-align: right;
+     padding-bottom: 10px;
      padding-right: 10px;
      margin-top: 10px;
+     text-align: right;
      float: right;
      font-size: 14pt;
      font-weight: bold;;
      color: rgb(252, 248, 204);
      text-shadow: 0px 2px 7px #680a65;
+     justify-self: flex-end;
 }
 @media (orientation: portrait) { 
      .price p {
