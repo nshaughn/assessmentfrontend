@@ -37,7 +37,8 @@ const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name }, 
                     <p>Sugar: {sugar}g</p>
                 </div>
                 <div className='fruit_price' onClick={() => handleClick(name)}>
-                    <p>Price per portion: <b>£{FakePrice}</b></p>
+                    <p>ADD TO YOUR SMOOTHIE!</p>
+                    {/* <p>Price per portion: <b>£{FakePrice}</b></p> */}
                     <p className='hulk'>⇨</p>
                 </div>
             </div>
