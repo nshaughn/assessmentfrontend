@@ -75,9 +75,9 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                                 <div className="highZ">
                                     <Sidebar basketList={basketList} />
                                 </div>
-                                <div className="login">
-                                    <p id='welcome'>
-                                        Welcome, {user}!
+                                <div className="login" sx={{ bg: 'login' }}>
+                                    <p>
+                                        Welcome back {user}!
                                     </p>
                                     <AccountModal token={token} />
                                     <form onSubmit={Logout} id='logout'>
