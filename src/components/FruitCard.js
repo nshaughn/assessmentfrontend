@@ -25,8 +25,11 @@ const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name, pr
     return (
         <div>
             <div className='fruit' key={index}>
-                <div className="fruit_list_image" >
+                <div className="fruit_list_image desktop" >
                     <img src={require(`../images/fruitlist/${name}.png`)} alt={`${name}`} />
+                </div>
+                <div class="mobile">
+                    <null />
                 </div>
                 <div className='fruit_makeup'>
                     <h1>{name}</h1>
@@ -38,13 +41,13 @@ const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name, pr
                 </div>
                 <div className='fruit_price' onClick={() => handleClick(name, price)} sx={{
             backgroundImage: (t) => `
-              linear-gradient(
+            linear-gradient(
                 to top,
                 ${alpha('primaryPrice', 0.1)(t)},
                 ${alpha('secondaryPrice', 0.9)(t)}
-              )
+            )
             `,
-          }}>
+            }}>
                     <p>Price per portion: <b>£{price}</b></p>
                     <p className='hulk'>⇨</p>
                 </div>

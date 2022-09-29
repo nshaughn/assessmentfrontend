@@ -250,7 +250,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                                                 return (
                                                 <p key={index}>{paired.name}&nbsp;&nbsp;&nbsp;&nbsp;
                                                     £{paired.price}
-                                                    <button onClick={() => deleteFruit(index)} className="delete">☠</button>
+                                                    <button onClick={() => deleteFruit(index)} title="Delete Item" className="delete">☠</button>
                                                 </p>)
                                             })}
                                         </div>

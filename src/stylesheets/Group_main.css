@@ -171,6 +171,11 @@ p {
     flex-direction: column;
     align-items: center;
 }
+@media (orientation: portrait) {
+    .innerCont {
+        width: 56%;
+    }
+}
 
 .selectionBoxes {
     height: 90%;
@@ -192,7 +197,13 @@ p {
     padding-left: 20px;
     padding-right: 20px;
     border-bottom: solid black 1px;
-
+}
+@media (orientation: portrait) {
+    .fruit {
+        padding-left: 0px;
+        padding-right: 0px;
+        width: fit-content;
+    }
 }
 
 .fruit:hover {
@@ -208,8 +219,6 @@ p {
 .fruit_makeup {
     display: inline-block;
     vertical-align: middle;
-
-
 }
 
 .fruit h1 {
@@ -217,6 +226,12 @@ p {
     text-align: center;
     padding-right: 20px;
     /* background-color: red; */
+}
+@media (orientation: portrait) {
+    .fruit h1 {
+        width: 150px;
+        font-size: 23px;
+    }
 }
 
 
@@ -234,6 +249,11 @@ p {
     align-items: center;
     border-radius: 5px;
     box-shadow: 0px 2px 3px black;
+}
+@media (orientation: portrait) {
+    .fruit_price {
+        min-width: 120px;
+    }
 }
 
 .hulk {
@@ -290,26 +310,48 @@ p {
 
 .selectedCSS p {
     padding: 10px 0px 10px 0px;
-
 }
 
 .selectedCSS h1 {
     animation: fontColor 20s infinite;
     font-size: 2em;
 }
-
-.fruit_list_image {
-    display: flex;
-    /* flex-grow: 1; */
-    padding-left: 10px;
-    padding-right: 10px;
+.desktop, .mobile {
+    display: none;
+}
+@media (orientation: landscape) {
+    .fruit_list_image {
+        display: flex;
+        /* flex-grow: 1; */
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .fruit_list_image img { 
+        object-fit:contain;
+        width: 50px;
+        height: 50px;
+    }
+    .desktop {
+        display: inline-block;
+        width: 0;
+    }
+}
+@media (orientation: portrait) {
+    .mobile {
+        display: inline-block;
+    }
 }
 
-.fruit_list_image img { 
-    object-fit:contain;
-    width: 50px;
-    height: 50px;
-}
+/* @media (orientation: portrait) {
+    .fruit_list_image {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .fruit_list_image img {
+        width: 25px;
+        height: 25px;
+    }
+} */
 
 #addToBasket {
     width: 20%;
@@ -336,6 +378,7 @@ p {
 .delete:hover {
     animation: grow 0.5s infinite;
     color: rgb(122, 122, 122);
+    cursor: pointer;
 }
 
 .delete:active {
