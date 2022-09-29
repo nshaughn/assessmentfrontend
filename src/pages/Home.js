@@ -1,20 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import UserModal from "../components/UserModal";
 import AccountModal from "../components/AccountModal";
 import FruitCard from "../components/FruitCard";
 import Sidebar from '../components/Sidebar';
 import Logout from "../components/Logout";
 import "../stylesheets/Group_main.css";
+import "../stylesheets/HomeLightMode.css";
+import "../stylesheets/Header_animation.css";
+
+import { useColorMode } from 'theme-ui';
+import { alpha, rotate } from '@theme-ui/color';
+
+
+/** @jsxImportSource theme-ui */
+
 
 function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, registerClicked, setRegisterClicked }) {
-    const [list, setList] = useState([])
-    const [basketList, setBasketList] = useState([])
-    const [loginStateModal, showLoginStateModal] = useState(false)
-    const [registerStateModal, showRegisterStateModal] = useState(false)
+    const [colorMode, setColorMode] = useColorMode();
+    const [slide, setSlide] = useState(false);
+    const [list, setList] = useState([]);
+    const [basketList, setBasketList] = useState([]);
+    const [loginStateModal, showLoginStateModal] = useState(false);
+    const [registerStateModal, showRegisterStateModal] = useState(false);
     function openLoginModal() { showLoginStateModal(true); }
     function openRegisterModal() { showRegisterStateModal(true); }
     function closeLoginModal() { showLoginStateModal(false); }
     function closeRegisterModal() { showRegisterStateModal(false); }
+
+    const slideClass = () => {
+        setSlide(!slide)
+    }
 
     const sendBasket = () => {
         setBasketList(list)
@@ -28,35 +43,97 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
     }
 
     return (
+        <div className="master" sx={{
+            backgroundImage: (t) => `
+              linear-gradient(
+                to top,
+                ${alpha('primaryMaster', 0.1)(t)},
+                ${alpha('secondaryMaster', 0.9)(t)}
+              )
+            `,
+          }}>
 
-        <div className="master">
-            <div className="header_bar">
+            <div className="header_bar" sx={{
+    backgroundImage: (t) => `
+      linear-gradient(
+        to top,
+        ${alpha('primaryHead', 0.5)(t)},
+        ${alpha('secondaryHead', 0.5)(t)}
+      )
+    `,
+  }}>
                 <img className="logo_img" src={require("../images/smoothie_logo_v1.png")} alt='logo' />
-                {!user ?
-                    <div className="login">
-                        <p>Log-in to create your smoothie!</p>
-                        <a onClick={openLoginModal}>Login</a> <a onClick={openRegisterModal}>Register</a>
+                <div className="sp-container">
+                    <div className="sp-containerInner">
+                        <h2 className="frame-1">AWESOME</h2>
+                        <h2 className="frame-2">REFRESHING</h2>
+                        <h2 className="frame-3">TASTEFUL</h2>
+                        <h2 className="frame-4">MOIST!</h2>
                     </div>
+                    <div className="sp-message">
+                        <h2 className="frame-5">
+                            <span>HAVE &nbsp;&nbsp;A</span>
+                            <span>SMOOTH</span>
+                            <span>EXPERIENCE</span>
+                        </h2>
+                    </div>
+                </div>
+                <div className="outerFlex">
+                    <div className="toggleFlex">
+                        <button className={slide ? 'slide' : null} sx={{ bg: 'black', color: 'white' }} id="slide" onClick={() => { setColorMode(colorMode === 'light' ? 'dark' : 'light'); slideClass() }}>
+                            <div className="indicator">{colorMode === 'light' ? '🌚' : '🌝'}</div>
+                        </button>
 
-                    :
-                    <>
-                        <div className="highZ">
-                            <Sidebar basketList={basketList} />
-                        </div>
-                        <div className="login">
-                            <p id='welcome'>
-                                Welcome, {user}!
-                            </p>
-                            <AccountModal token={token} />
-                            <form onSubmit={Logout} id='logout'>
-                                <button type='submit'>Logout</button>
-                            </form>
+                        {!user ?
+                            <div className="login" sx={{
+                                backgroundImage: (t) => `
+                                  linear-gradient(
+                                    to bottom,
+                                    ${alpha('primaryLogin', 0.5)(t)},
+                                    ${alpha('secondaryLogin', 0.5)(t)}
+                                  )
+                                `,
+                              }}>
+                                <p>Log-in to create your smoothie!</p>
+                                <button onClick={openLoginModal}>Login</button> <button onClick={openRegisterModal}>Register</button>
+                            </div>
+                            :
+                            <>
+                                <div className="highZ">
+                                    <Sidebar basketList={basketList} />
+                                </div>
+                                <div className="login" sx={{
+                                backgroundImage: (t) => `
+                                  linear-gradient(
+                                    to bottom,
+                                    ${alpha('primaryLogin', 0.5)(t)},
+                                    ${alpha('secondaryLogin', 0.5)(t)}
+                                  )
+                                `,
+                              }}>
+                                    <p>
+                                        Welcome back {user}!
+                                    </p>
+                                    <AccountModal token={token} />
+                                    <form onSubmit={Logout} id='logout'>
+                                        <button type='submit'>Logout</button>
+                                    </form>
 
-                        </div>
-                    </>}
+                                </div>
+                            </>
+                        }
+                    </div>
+                </div>
             </div>
-
-            <div className='offers_container'>
+            <div className='offers_container' sx={{
+                                backgroundImage: (t) => `
+                                  linear-gradient(
+                                    to bottom right,
+                                    ${alpha('primaryOffers', 0.5)(t)},
+                                    ${alpha('secondaryOffers', 0.5)(t)}
+                                  )
+                                `,
+                              }}>
 
                 {/* Card 1 */}
                 <div className="offers offers_red">
@@ -64,9 +141,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                     <div className="desktop">
                         <img className="offerImg" src={require("../images/smoothie_offers/smoothie_red.png")} alt='Red Smoothie' />
                     </div>
-                    <div class="mobile">
-                        <null />
-                    </div>
+ 
 
                     <div className="ingredients">
                         <h1>Red Special Offer</h1>
@@ -125,9 +200,18 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                     <UserModal setter={setUser} setToken={setToken} toggle={toggle} setToggle={setToggle} loginStateModal={loginStateModal}
                         registerStateModal={registerStateModal} showRegisterStateModal={showRegisterStateModal} closeLoginModal={closeLoginModal}
                         closeRegisterModal={closeRegisterModal} user={user} registerClicked={registerClicked} setRegisterClicked={setRegisterClicked} />
-                    <div className='splashPage'>
+                    <div className='splashPage' sx={{
+                                backgroundImage: (t) => `
+                                  linear-gradient(
+                                    to bottom left,
+                                    ${alpha('primarySplash', 0.5)(t)},
+                                    ${alpha('secondarySplash', 0.5)(t)}
+                                  )
+                                `,
+                              }}>
                         <div className='innerCont'>
-                            <div className="container_headers"><p>🡗 SCRATCH & SNIFF 🡖</p></div>
+                            <div className="container_headers"><p>🡗 SCRATCH & SNIFF 🡖</p>
+                            </div>
                             <div className='animationFront'>
                             </div>
                         </div>
@@ -135,10 +219,9 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                 </>
                 :
                 <>
-
-                    <div className='selectionCont'>
+                    <div className='selectionCont' sx={{bg: 'price'}}>
                         <div className='innerCont'>
-                            <div className="container_headers">
+                            <div className="container_headers" sx={{bg: 'containerHeader'}}>
                                 <p>Click the ingredient to build your smoothie:</p>
                             </div>
                             <div className='selectionBoxes'>
@@ -156,7 +239,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                             </div>
                         </div>
                         <div className='innerCont'>
-                            <div className="container_headers">
+                            <div className="container_headers" sx={{bg: 'containerHeader'}}>
                                 <p>Your smoothie:</p>
                             </div>
                             <div className='selectionBoxes'>
@@ -164,13 +247,11 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                                     <div id="outerSelected">
                                         <div className="selectedCSS">
                                             {list?.map((name, index) => (
-                                                <p key={index}>{name}
-                                                    <div>
-                                                        <button onClick={() => deleteFruit(index)}>DELETE</button>
-                                                    </div>
+                                                <p key={index}>{name}&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <button onClick={() => deleteFruit(index)} className="delete">☠</button>
                                                 </p>
                                             ))}
-                                            
+
                                         </div>
                                         <button id="addToBasket" onClick={sendBasket}>+🛒</button>
                                     </div>
@@ -182,9 +263,9 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                             </div>
                         </div>
                     </div>
-                </>}
+                </>
+            }
         </div>
-
     )
 }
 

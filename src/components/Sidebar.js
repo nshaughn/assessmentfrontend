@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components'
 import * as AiIcons from "react-icons/ai";
 // import * as TbIcons from "react-icons/tb";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // import SideBarCheckout from './SideBarCheckout';
+import Checkout from '../pages/Checkout';
 
 import "../stylesheets/Sidebar.css"
 
@@ -28,26 +29,39 @@ function Sidebar({ basketList }) {
                         </li>
                         <div className="makeFit">
                             <div className="outerBasket">
-                                {/* <div> */}
-                                    <h1 className='h1Text'>Basket</h1>
-                                {/* </div> */}
+                                <h1 className='h1Text'>Basket</h1>
                                 <div className="addedCont">
                                     {basketList?.length > 0 ? (
-                                        <div className="addedItems">
-                                            {basketList?.map((name, index) => (
-                                                <p key={index}>{name}</p>
-                                            ))}
+                                        <div className="sizeBox">
+                                            <div className="yourSmoothie">
+                                                <p>YOUR<br />SMOOTHIE:</p>
+                                            </div>
+                                            <div className="addedItems fillBasket">
+                                                {basketList?.map((name, index) => (
+                                                    <p key={index}>{name}</p>
+                                                ))}
+                                            </div>
                                         </div>
                                     ) : (
-                                        <div className="addedItems">
-                                            <h1>Basket is empty!</h1>
+                                        <div className="sizeBox">
+                                            <div className="yourSmoothie">
+                                                <p>C'MON,<br />CHOOSE!</p>
+                                            </div>
+                                            <div className="addedItems emptyBasket">
+                                                <p>BASKET<br />IS<br />EMPTY!</p>
+                                            </div>
                                         </div>
                                     )}
                                 </div>
                                 {/* <p className="runningTotal">£{total}</p> */}
                                 {/* <Link to="/checkout"> */}
                                 <div>
-                                    <button className="sendCheckout">Checkout</button>
+                                    {/* <button className="sendCheckout">Checkout</button> */}
+
+                                    <form onSubmit={Checkout}>
+                                        <button className="sendCheckout" type='submit'>Checkout</button>
+                                    </form>
+
                                 </div>
                                 {/* </Link> */}
                             </div>

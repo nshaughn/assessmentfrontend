@@ -3,7 +3,7 @@ import { useState } from "react";
 import { editEmail } from '../utils';
 import { getCookie } from '../common';
 
-const EmailEdit = ({token}) => {
+const EmailEdit = () => {
     const [email, setEmail] = useState()
 
     const submitHandler = async (event) => {

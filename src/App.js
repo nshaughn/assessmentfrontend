@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Checkout from './pages/Checkout';
+// import Checkout from './pages/Checkout';
 import Home from './pages/Home';
 import { getCookie } from "./common";
 import { findUser } from "./utils";
@@ -35,7 +35,7 @@ const App = () => {
       const fetchFruit = async () => {
         try {
           setErrorMsg('');
-          const response = await fetch('http://localhost:9001/getFruity', {
+          const response = await fetch(`${process.env.REACT_APP_BASE_URL}getFruity`, {
             method: 'GET',
             headers: {"Content-Type": "application/json"}
           })

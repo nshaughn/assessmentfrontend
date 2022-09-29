@@ -16,7 +16,7 @@ const AccountModal = ({token}) => {
 
     return (
         <div>
-            <a onClick={openAccountModal} id="account">Manage account</a>
+            <button onClick={openAccountModal} id="account">Manage account</button>
             <Modal isOpen={accountStateModal} onRequestClose={closeAccountModal} className="modalContent" id="userFlex" contentLabel="Example Modal" overlayClassName="modalZ">
                 <DisplayUsers wide={toggle} setWide={setToggle}/>
                 <div className={!toggle ? "showUser" : "hideUser"}>

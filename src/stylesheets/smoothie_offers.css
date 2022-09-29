@@ -169,6 +169,7 @@
      font-weight: bold;;
      color: rgb(252, 248, 204);
      text-shadow: 0px 2px 7px #680a65;
+
 }
 @media all and (max-width: 1234px) {
      .price p {
