@@ -15,7 +15,7 @@ import { alpha, rotate } from '@theme-ui/color';
 /** @jsxImportSource theme-ui */
 
 
-function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, registerClicked, setRegisterClicked }) {
+function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, registerClicked, setRegisterClicked, array, total, setTotal, priceList }) {
     const [colorMode, setColorMode] = useColorMode();
     const [slide, setSlide] = useState(false);
     const [list, setList] = useState([]);
@@ -51,17 +51,17 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                 ${alpha('secondaryMaster', 0.9)(t)}
               )
             `,
-          }}>
+        }}>
 
             <div className="header_bar" sx={{
-    backgroundImage: (t) => `
+                backgroundImage: (t) => `
       linear-gradient(
         to top,
         ${alpha('primaryHead', 0.5)(t)},
         ${alpha('secondaryHead', 0.5)(t)}
       )
     `,
-  }}>
+            }}>
                 <img className="logo_img" src={require("../images/smoothie_logo_v1.png")} alt='logo' />
                 <div className="sp-container">
                     <div className="sp-containerInner">
@@ -93,24 +93,24 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                                     ${alpha('secondaryLogin', 0.5)(t)}
                                   )
                                 `,
-                              }}>
+                            }}>
                                 <p>Log-in to create your smoothie!</p>
                                 <button onClick={openLoginModal}>Login</button> <button onClick={openRegisterModal}>Register</button>
                             </div>
                             :
                             <>
                                 <div className="highZ">
-                                    <Sidebar basketList={basketList} />
+                                    <Sidebar basketList={basketList} array={array} total={total} setTotal={setTotal} priceList={priceList} />
                                 </div>
                                 <div className="login" sx={{
-                                backgroundImage: (t) => `
+                                    backgroundImage: (t) => `
                                   linear-gradient(
                                     to bottom,
                                     ${alpha('primaryLogin', 0.5)(t)},
                                     ${alpha('secondaryLogin', 0.5)(t)}
                                   )
                                 `,
-                              }}>
+                                }}>
                                     <p>
                                         Welcome back {user}!
                                     </p>
@@ -126,14 +126,14 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                 </div>
             </div>
             <div className='offers_container' sx={{
-                                backgroundImage: (t) => `
+                backgroundImage: (t) => `
                                   linear-gradient(
                                     to bottom right,
                                     ${alpha('primaryOffers', 0.5)(t)},
                                     ${alpha('secondaryOffers', 0.5)(t)}
                                   )
                                 `,
-                              }}>
+            }}>
 
                 {/* Card 1 */}
                 <div className="offers offers_red">
@@ -141,7 +141,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                     <div className="desktop">
                         <img className="offerImg" src={require("../images/smoothie_offers/smoothie_red.png")} alt='Red Smoothie' />
                     </div>
- 
+
 
                     <div className="ingredients">
                         <h1>Red Special Offer</h1>
@@ -201,14 +201,14 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                         registerStateModal={registerStateModal} showRegisterStateModal={showRegisterStateModal} closeLoginModal={closeLoginModal}
                         closeRegisterModal={closeRegisterModal} user={user} registerClicked={registerClicked} setRegisterClicked={setRegisterClicked} />
                     <div className='splashPage' sx={{
-                                backgroundImage: (t) => `
+                        backgroundImage: (t) => `
                                   linear-gradient(
                                     to bottom left,
                                     ${alpha('primarySplash', 0.5)(t)},
                                     ${alpha('secondarySplash', 0.5)(t)}
                                   )
                                 `,
-                              }}>
+                    }}>
                         <div className='innerCont'>
                             <div className="container_headers"><p>🡗 SCRATCH & SNIFF 🡖</p>
                             </div>
@@ -219,16 +219,16 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                 </>
                 :
                 <>
-                    <div className='selectionCont' sx={{bg: 'price'}}>
+                    <div className='selectionCont' sx={{ bg: 'price' }}>
                         <div className='innerCont'>
-                            <div className="container_headers" sx={{bg: 'containerHeader'}}>
+                            <div className="container_headers" sx={{ bg: 'containerHeader' }}>
                                 <p>Click the ingredient to build your smoothie:</p>
                             </div>
                             <div className='selectionBoxes'>
                                 {fruits?.length > 0 ? (
                                     <div>
                                         {fruits.map((fruit, index) => (
-                                            <FruitCard fruit={fruit} list={list} setList={setList} key={index} />
+                                            <FruitCard fruit={fruit} array={array} list={list} setList={setList} key={index} />
                                         ))}
                                     </div>
                                 ) : (
@@ -239,15 +239,16 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                             </div>
                         </div>
                         <div className='innerCont'>
-                            <div className="container_headers" sx={{bg: 'containerHeader'}}>
+                            <div className="container_headers" sx={{ bg: 'containerHeader' }}>
                                 <p>Your smoothie:</p>
                             </div>
                             <div className='selectionBoxes'>
                                 {list?.length > 0 ? (
                                     <div id="outerSelected">
                                         <div className="selectedCSS">
-                                            {list?.map((name, index) => (
-                                                <p key={index}>{name}&nbsp;&nbsp;&nbsp;&nbsp;
+                                            {list?.map((paired, index) => (
+                                                <p key={index}>{paired.name}&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    £{paired.price}
                                                     <button onClick={() => deleteFruit(index)} className="delete">☠</button>
                                                 </p>
                                             ))}

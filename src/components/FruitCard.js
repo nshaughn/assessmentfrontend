@@ -1,18 +1,27 @@
 import React from 'react';
-import { faker } from '@faker-js/faker';
+// import { faker } from '@faker-js/faker';
 import { alpha, rotate } from '@theme-ui/color';
 
 /** @jsxImportSource theme-ui */
 
-const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name }, list, setList, index, price }) => {
+const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name, price }, list, setList, index, array }) => {
 
-    price = Math.ceil(faker.datatype.number() / 10000)
+    // price = Math.ceil(faker.datatype.number() / 10000)
 
-    const handleClick = (name) => {
-        setList([...list, name])
-        console.log(list)
-    }
+    // const handleClick = (name) => {
+    //     setList([...list, name])
+    //     console.log(list)
+    // }
     
+    const handleClick = (name, price) => {
+        console.log(name, price)
+        array.push({
+            name: name,
+            price: price
+        })
+        setList([...array])
+    }
+
     return (
         <div>
             <div className='fruit' key={index}>
@@ -27,7 +36,7 @@ const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name }, 
                     <p>Protein: {protein}g</p>
                     <p>Sugar: {sugar}g</p>
                 </div>
-                <div className='fruit_price' onClick={() => handleClick(name)} sx={{
+                <div className='fruit_price' onClick={() => handleClick(name, price)} sx={{
             backgroundImage: (t) => `
               linear-gradient(
                 to top,

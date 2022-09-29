@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components'
 import * as AiIcons from "react-icons/ai";
 // import * as TbIcons from "react-icons/tb";
@@ -8,9 +8,29 @@ import Checkout from '../pages/Checkout';
 
 import "../stylesheets/Sidebar.css"
 
-function Sidebar({ basketList }) {
+function Sidebar({ basketList, total, setTotal, priceList }) {
     const [sidebar, setSidebar] = useState(false)
     const showSidebar = () => setSidebar(!sidebar)
+
+    const makePriceList = () => {
+        basketList?.map((paired) => (
+            priceList.push(paired.price)
+        ))
+        console.log(priceList)
+    }
+
+    let sum = 0
+    useEffect(() => {
+        makePriceList()
+        for (let i = 0; i < priceList.length; i++) {
+            console.log('sidebar!!!', priceList[i])
+            sum += priceList[i]
+        }
+        // console.log('here')
+        // console.log(total)
+        // setTotal(sum)
+        setTotal(sum.toFixed(2))
+    }, [])
 
     return (
         <>
@@ -37,8 +57,8 @@ function Sidebar({ basketList }) {
                                                 <p>YOUR<br />SMOOTHIE:</p>
                                             </div>
                                             <div className="addedItems fillBasket">
-                                                {basketList?.map((name, index) => (
-                                                    <p key={index}>{name}</p>
+                                                {basketList?.map((paired, index) => (
+                                                    <p key={index}>{paired.name} £{paired.price}</p>
                                                 ))}
                                             </div>
                                         </div>
@@ -59,7 +79,7 @@ function Sidebar({ basketList }) {
                                     {/* <button className="sendCheckout">Checkout</button> */}
 
                                     <form onSubmit={Checkout}>
-                                        <button className="sendCheckout" type='submit'>Checkout</button>
+                                        <button className="sendCheckout" type='submit'>Total: £{total} Checkout</button>
                                     </form>
 
                                 </div>
