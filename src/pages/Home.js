@@ -9,6 +9,8 @@ import "../stylesheets/HomeLightMode.css";
 import "../stylesheets/Header_animation.css";
 
 import { useColorMode } from 'theme-ui';
+import { alpha, rotate } from '@theme-ui/color';
+
 
 /** @jsxImportSource theme-ui */
 
@@ -41,8 +43,25 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
     }
 
     return (
-        <div className="master">
-            <div className="header_bar" sx={{ bg: 'headerBar' }}>
+        <div className="master" sx={{
+            backgroundImage: (t) => `
+              linear-gradient(
+                to top,
+                ${alpha('primaryMaster', 0.1)(t)},
+                ${alpha('secondaryMaster', 0.9)(t)}
+              )
+            `,
+          }}>
+
+            <div className="header_bar" sx={{
+    backgroundImage: (t) => `
+      linear-gradient(
+        to top,
+        ${alpha('primaryHead', 0.5)(t)},
+        ${alpha('secondaryHead', 0.5)(t)}
+      )
+    `,
+  }}>
                 <img className="logo_img" src={require("../images/smoothie_logo_v1.png")} alt='logo' />
                 <div className="sp-container">
                     <div className="sp-containerInner">
@@ -66,7 +85,15 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                         </button>
 
                         {!user ?
-                            <div className="login" sx={{ bg: 'login' }}>
+                            <div className="login" sx={{
+                                backgroundImage: (t) => `
+                                  linear-gradient(
+                                    to bottom,
+                                    ${alpha('primaryLogin', 0.5)(t)},
+                                    ${alpha('secondaryLogin', 0.5)(t)}
+                                  )
+                                `,
+                              }}>
                                 <p>Log-in to create your smoothie!</p>
                                 <button onClick={openLoginModal}>Login</button> <button onClick={openRegisterModal}>Register</button>
                             </div>
@@ -75,7 +102,15 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                                 <div className="highZ">
                                     <Sidebar basketList={basketList} />
                                 </div>
-                                <div className="login" sx={{ bg: 'login' }}>
+                                <div className="login" sx={{
+                                backgroundImage: (t) => `
+                                  linear-gradient(
+                                    to bottom,
+                                    ${alpha('primaryLogin', 0.5)(t)},
+                                    ${alpha('secondaryLogin', 0.5)(t)}
+                                  )
+                                `,
+                              }}>
                                     <p>
                                         Welcome back {user}!
                                     </p>
@@ -90,7 +125,15 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                     </div>
                 </div>
             </div>
-            <div className='offers_container' sx={{ bg: 'offersContainer' }}>
+            <div className='offers_container' sx={{
+                                backgroundImage: (t) => `
+                                  linear-gradient(
+                                    to bottom right,
+                                    ${alpha('primaryOffers', 0.5)(t)},
+                                    ${alpha('secondaryOffers', 0.5)(t)}
+                                  )
+                                `,
+                              }}>
 
                 {/* Card 1 */}
                 <div className="offers offers_red">
@@ -157,7 +200,15 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                     <UserModal setter={setUser} setToken={setToken} toggle={toggle} setToggle={setToggle} loginStateModal={loginStateModal}
                         registerStateModal={registerStateModal} showRegisterStateModal={showRegisterStateModal} closeLoginModal={closeLoginModal}
                         closeRegisterModal={closeRegisterModal} user={user} registerClicked={registerClicked} setRegisterClicked={setRegisterClicked} />
-                    <div className='splashPage' sx={{ bg: 'splashPage' }}>
+                    <div className='splashPage' sx={{
+                                backgroundImage: (t) => `
+                                  linear-gradient(
+                                    to bottom left,
+                                    ${alpha('primarySplash', 0.5)(t)},
+                                    ${alpha('secondarySplash', 0.5)(t)}
+                                  )
+                                `,
+                              }}>
                         <div className='innerCont'>
                             <div className="container_headers"><p>🡗 SCRATCH & SNIFF 🡖</p>
                             </div>
@@ -168,9 +219,9 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                 </>
                 :
                 <>
-                    <div className='selectionCont'>
+                    <div className='selectionCont' sx={{bg: 'price'}}>
                         <div className='innerCont'>
-                            <div className="container_headers">
+                            <div className="container_headers" sx={{bg: 'containerHeader'}}>
                                 <p>Click the ingredient to build your smoothie:</p>
                             </div>
                             <div className='selectionBoxes'>
@@ -188,7 +239,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                             </div>
                         </div>
                         <div className='innerCont'>
-                            <div className="container_headers">
+                            <div className="container_headers" sx={{bg: 'containerHeader'}}>
                                 <p>Your smoothie:</p>
                             </div>
                             <div className='selectionBoxes'>

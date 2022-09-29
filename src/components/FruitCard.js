@@ -1,5 +1,8 @@
 import React from 'react';
 import { faker } from '@faker-js/faker';
+import { alpha, rotate } from '@theme-ui/color';
+
+/** @jsxImportSource theme-ui */
 
 const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name }, list, setList, index, price }) => {
 
@@ -24,7 +27,15 @@ const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name }, 
                     <p>Protein: {protein}g</p>
                     <p>Sugar: {sugar}g</p>
                 </div>
-                <div className='fruit_price' onClick={() => handleClick(name)}>
+                <div className='fruit_price' onClick={() => handleClick(name)} sx={{
+            backgroundImage: (t) => `
+              linear-gradient(
+                to top,
+                ${alpha('primaryPrice', 0.1)(t)},
+                ${alpha('secondaryPrice', 0.9)(t)}
+              )
+            `,
+          }}>
                     <p>Price per portion: <b>£{price}</b></p>
                     <p className='hulk'>⇨</p>
                 </div>
