@@ -35,7 +35,7 @@ const App = () => {
       const fetchFruit = async () => {
         try {
           setErrorMsg('');
-          const response = await fetch(process.env.REACT_APP_FRUIT_API, {
+          const response = await fetch(`${process.env.REACT_APP_BASE_URL}getFruity`, {
             method: 'GET',
             headers: {"Content-Type": "application/json"}
           })
