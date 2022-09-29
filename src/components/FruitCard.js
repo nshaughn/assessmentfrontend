@@ -1,6 +1,6 @@
 import React from 'react';
 // import { faker } from '@faker-js/faker';
-import { alpha, rotate } from '@theme-ui/color';
+import { alpha } from '@theme-ui/color';
 
 /** @jsxImportSource theme-ui */
 

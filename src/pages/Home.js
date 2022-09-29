@@ -9,17 +9,17 @@ import "../stylesheets/HomeLightMode.css";
 import "../stylesheets/Header_animation.css";
 
 import { useColorMode } from 'theme-ui';
-import { alpha, rotate } from '@theme-ui/color';
+import { alpha } from '@theme-ui/color';
 
 
 /** @jsxImportSource theme-ui */
 
 
-function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, registerClicked, setRegisterClicked, array, total, setTotal, priceList }) {
+function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, registerClicked, setRegisterClicked, array, total, setTotal, priceList, checkOut, setCheckOut }) {
     const [colorMode, setColorMode] = useColorMode();
     const [slide, setSlide] = useState(false);
     const [list, setList] = useState([]);
-    const [basketList, setBasketList] = useState([]);
+    // const [basketList, setBasketList] = useState([]);
     const [loginStateModal, showLoginStateModal] = useState(false);
     const [registerStateModal, showRegisterStateModal] = useState(false);
     function openLoginModal() { showLoginStateModal(true); }
@@ -31,15 +31,15 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
         setSlide(!slide)
     }
 
-    const sendBasket = () => {
-        setBasketList(list)
+    const sendCheckOut = () => {
+        setCheckOut(list)
     }
 
     const deleteFruit = (index) => {
         let arr = [...list]
         arr.splice(index, 1)
         setList(arr)
-        setBasketList(arr)
+        setCheckOut(arr)
     }
 
     return (
@@ -100,7 +100,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                             :
                             <>
                                 <div className="highZ">
-                                    <Sidebar basketList={basketList} array={array} total={total} setTotal={setTotal} priceList={priceList} />
+                                    <Sidebar checkOut={checkOut} array={array} total={total} setTotal={setTotal} priceList={priceList} />
                                 </div>
                                 <div className="login" sx={{
                                     backgroundImage: (t) => `
@@ -246,15 +246,15 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                                 {list?.length > 0 ? (
                                     <div id="outerSelected">
                                         <div className="selectedCSS">
-                                            {list?.map((paired, index) => (
+                                            {list?.map((paired, index) => {
+                                                return (
                                                 <p key={index}>{paired.name}&nbsp;&nbsp;&nbsp;&nbsp;
                                                     £{paired.price}
                                                     <button onClick={() => deleteFruit(index)} className="delete">☠</button>
-                                                </p>
-                                            ))}
-
+                                                </p>)
+                                            })}
                                         </div>
-                                        <button id="addToBasket" onClick={sendBasket}>+🛒</button>
+                                        <button id="addToBasket" onClick={sendCheckOut}>+🛒</button>
                                     </div>
                                 ) : (
                                     <div className="selectedCSS">
