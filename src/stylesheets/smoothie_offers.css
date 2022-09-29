@@ -18,7 +18,7 @@
      /* background-image: linear-gradient(to bottom right, #3d033a, #1f031d); */
      margin: auto;
      padding: 10px;
-     height: 20.5%;
+     height: 21.5%;
      box-shadow: var(--shadow_main);
 
      text-align: center;
@@ -32,6 +32,7 @@
      width: 30%;
      height: 100%;
      cursor: pointer;
+     /* border: solid pink; */
 }
 
 
@@ -75,10 +76,12 @@
      .offerImg {
           background-image: var(--smoothie_img_bg);
           height: 100%;
+          /* border: solid yellow; */
           display: inline-block;
      }
      .desktop {
           display: inline-block;
+          width: 0;
      }
 }
 @media (orientation: portrait) {
@@ -86,28 +89,19 @@
           display: inline-block;
      }
 }
-/* .offers img {
-     background-image: var(--smoothie_img_bg);
-     max-height: 170px;
-
-     display: inline-block;
-     margin-left: 10px;
-} */
-
 
 .ingredients {
      display: flex;
      flex-direction: column;
-     /* flex-grow: 1; */
-     /* margin-left: 10px; */
-     width: 71%;
+     height: 100%;
+     width: 77%;
      align-self: center;
      justify-items: flex-start;
-     /* border: solid pink; */
 }
 
 .ingredients h1 {
      color: var(--offers_h1);
+     align-self: center;
      font-size: 17pt;
      background-color: var(--offers_ribbon);
      text-shadow: 0px 2px 7px #680a65;
@@ -134,7 +128,10 @@
 }
 
 .ingredients p {
-     align-items: center;
+     /* align-items: flex-start; */
+     /* display: flex; */
+     /* border: solid yellow; */
+     text-align: center;
      font-size: 15pt;
      padding-top: 5px;
      width: 100%;
@@ -145,20 +142,20 @@
      }
 } */
 
-/* .price {
-
-} */
 .price p {
      padding-bottom: 10px;
      padding-right: 10px;
-     margin-top: 10px;
+     width: 100%;
+     padding-top: 13px;
+     /* margin-top: 10px; */
+     /* border: solid black; */
      text-align: right;
      float: right;
      font-size: 14pt;
      font-weight: bold;;
      color: rgb(252, 248, 204);
      text-shadow: 0px 2px 7px #680a65;
-     justify-self: flex-end;
+
 }
 @media (orientation: portrait) { 
      .price p {
