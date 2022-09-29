@@ -248,7 +248,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                                         <div className="selectedCSS">
                                             {list?.map((name, index) => (
                                                 <p key={index}>{name}&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <button onClick={() => deleteFruit(index)} className="delete">☠</button>
+                                                    <button onClick={() => deleteFruit(index)} title="Delete Item" className="delete">☠</button>
                                                 </p>
                                             ))}
 

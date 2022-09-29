@@ -2,6 +2,7 @@
 @import url("./Group_main.css");
 
 
+
 .sp-container {
     font-family: 'Barlow', sans-serif;
     height: 100%;
@@ -9,9 +10,20 @@
     display: flex;
     flex-wrap: wrap;
 }
+@media (orientation: portrait) {
+  .sp-container {
+    width: 40%;
+  }
+}
+
 .sp-container *{
     font-family: 'Barlow', sans-serif;
     font-size: 1.3em;
+}
+@media (orientation: portrait) {
+  .sp-container *{
+    font-size: 22px;
+  }
 }
 
 .sp-containerInner {
