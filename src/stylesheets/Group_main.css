@@ -366,6 +366,7 @@ p {
 #addToBasket:hover {
     color: greenyellow;
     box-shadow: 0px 0px 3px 3px greenyellow;
+    cursor: pointer;
 }
 
 .delete {
