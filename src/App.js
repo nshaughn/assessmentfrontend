@@ -23,7 +23,9 @@ const App = () => {
   }
 
   useEffect(() => {
+
     fetchFruit()
+
     let cookie = getCookie("jwt_token")
     console.log(cookie)
     if(cookie !== false){
