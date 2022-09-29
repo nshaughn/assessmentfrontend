@@ -5,11 +5,9 @@ import Home from './pages/Home';
 import { getCookie } from "./common";
 import { findUser } from "./utils";
 import { faker } from '@faker-js/faker';
-// import "./stylesheets/App.css"
-// import "./stylesheets/Group_main.css"
 
 const App = () => {
-  // let sum = 0
+
   const array = [];
   const priceList = [];
   const [errorMsg, setErrorMsg] = useState('');

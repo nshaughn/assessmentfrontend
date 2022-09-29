@@ -1,17 +1,9 @@
 import React from 'react';
-// import { faker } from '@faker-js/faker';
 import { alpha } from '@theme-ui/color';
 
 /** @jsxImportSource theme-ui */
 
 const FruitCard = ({ fruit: { nutritions: { calories, protein, sugar }, name, price }, list, setList, index, array }) => {
-
-    // price = Math.ceil(faker.datatype.number() / 10000)
-
-    // const handleClick = (name) => {
-    //     setList([...list, name])
-    //     console.log(list)
-    // }
     
     const handleClick = (name, price) => {
         console.log(name, price)
