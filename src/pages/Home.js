@@ -19,7 +19,6 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
     const [colorMode, setColorMode] = useColorMode();
     const [slide, setSlide] = useState(false);
     const [list, setList] = useState([]);
-    // const [basketList, setBasketList] = useState([]);
     const [loginStateModal, showLoginStateModal] = useState(false);
     const [registerStateModal, showRegisterStateModal] = useState(false);
     function openLoginModal() { showLoginStateModal(true); }
