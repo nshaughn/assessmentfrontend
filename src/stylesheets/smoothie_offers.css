@@ -72,6 +72,7 @@
 .desktop, .mobile {
      display: none;
 }
+
 @media (orientation: landscape) {
      .offerImg {
           background-image: var(--smoothie_img_bg);
@@ -82,6 +83,11 @@
      .desktop {
           display: inline-block;
           width: 0;
+     }
+}
+@media all and (max-width: 1234px) {
+     .offerImg {
+          height: 80%;
      }
 }
 @media (orientation: portrait) {
@@ -106,6 +112,20 @@
      background-color: var(--offers_ribbon);
      text-shadow: 0px 2px 7px #680a65;
 }
+@media all and (max-width: 1234px) { 
+     .ingredients h1 {
+          font-size: 14pt;
+          text-align: center;
+          width: 95.5%;
+          /* padding: 5px 28px 5px 28px; */
+     }
+     .ingredients {
+          width: 67%;
+          display: flex;
+          /* border: solid green; */
+          justify-content: center;
+     }
+}
 @media (orientation: portrait) { 
      .ingredients h1 {
           font-size: 13pt;
@@ -119,12 +139,6 @@
           /* border: solid green; */
           justify-content: center;
      }
-     .ingredients p {
-          font-size:12pt;
-     }
-     .price {
-          align-self: center;
-     }
 }
 
 .ingredients p {
@@ -136,11 +150,11 @@
      padding-top: 5px;
      width: 100%;
 }
-/* @media (orientation: portrait) { 
+@media (orientation: portrait) { 
      .ingredients p {
           font-size:12pt;
      }
-} */
+}
 
 .price p {
      padding-bottom: 10px;
@@ -157,12 +171,21 @@
      text-shadow: 0px 2px 7px #680a65;
 
 }
-@media (orientation: portrait) { 
+@media all and (max-width: 1234px) {
      .price p {
-          
-          font-size: 10pt;
+          font-size: 12pt;
      }
 }
+@media (orientation: portrait) { 
+     .price p {
+          float: none;
+          font-size: 10pt;
+     }
+     .price {
+          align-self: center;
+     }
+}
+
 
 @keyframes rainbow {
 
