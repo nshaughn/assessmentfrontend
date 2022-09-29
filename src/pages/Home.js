@@ -141,9 +141,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                     <div className="desktop">
                         <img className="offerImg" src={require("../images/smoothie_offers/smoothie_red.png")} alt='Red Smoothie' />
                     </div>
-                    <div class="mobile">
-                        <null />
-                    </div>
+ 
 
                     <div className="ingredients">
                         <h1>Red Special Offer</h1>
