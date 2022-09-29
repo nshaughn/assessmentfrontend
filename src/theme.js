@@ -34,7 +34,7 @@ const theme = {
         secondarySplash: 'white',
         primaryPrice: 'green',
         secondaryPrice: '#ff1654',
-        containerHeader: '#ff1654',
+        containerHeader: '#ff1654'
       },
     },
   },
