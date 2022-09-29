@@ -31,6 +31,14 @@ const App = () => {
     }
   }, [registerClicked])
 
+  useEffect(() => {
+    (async()=>{
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}test`)
+      const data = await response.json()
+      console.log("data from data test app.js ", data)
+    })();
+  })
+
 
       const fetchFruit = async () => {
         try {
