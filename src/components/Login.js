@@ -8,8 +8,10 @@ const Login = ({ setter }) => {
 
     const submitHandler = async (event) => {
         event.preventDefault()
+        console.log("!!!!!")
         await login(email, password, setter)
     }
+
 
     return (
         <form onSubmit={submitHandler} className="formStyle" id="loginModal">

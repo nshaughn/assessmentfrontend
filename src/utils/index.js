@@ -2,7 +2,7 @@ import { writeCookie } from "../common";
 
 export const register = async (name, email, password, setter) => {
     try {
-        const response = await fetch(`${process.env.REACT_APP_BASE_URL}signup`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}user/signup`, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
@@ -23,7 +23,7 @@ export const register = async (name, email, password, setter) => {
 
 export const login = async (email, password, setter) => {
     try {
-        const response = await fetch(`${process.env.REACT_APP_BASE_URL}login`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}user/login`, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
@@ -31,6 +31,7 @@ export const login = async (email, password, setter) => {
                 "password": password
             })
         });
+        console.log("login index.js response", response)
         const data = await response.json()
         console.log(data.token)
         setter(data.name)
@@ -42,7 +43,7 @@ export const login = async (email, password, setter) => {
 
 export const displayUsers = async (token) => {
     try {
-        const response = await fetch(`${process.env.REACT_APP_BASE_URL}list`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}user/list`, {
             method: "GET",
             headers: {"Content-Type": "application/json",
                         "Authorization": `Bearer ${token}`            
@@ -59,7 +60,7 @@ export const displayUsers = async (token) => {
 
 export const editName = async (token, name) => {
     try {
-        const response = await fetch(`${process.env.REACT_APP_BASE_URL}editname`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}user/editname`, {
             method: "PUT",
             headers: {"Content-Type": "application/json", "Authorization":`Bearer ${token}`},
             body: JSON.stringify({"name": name})
@@ -73,7 +74,7 @@ export const editName = async (token, name) => {
 
 export const editEmail = async (token, email) => {
     try {
-        const response = await fetch(`${process.env.REACT_APP_BASE_URL}editemail`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}user/editemail`, {
             method: "PUT",
             headers: {"Content-Type": "application/json", "Authorization":`Bearer ${token}`},
             body: JSON.stringify({"email": email})
@@ -87,7 +88,7 @@ export const editEmail = async (token, email) => {
 
 export const editPassword = async (token, password) => {
     try {
-        const response = await fetch(`${process.env.REACT_APP_BASE_URL}editpassword`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}user/editpassword`, {
             method: "PUT",
             headers: {"Content-Type": "application/json", "Authorization":`Bearer ${token}`},
             body: JSON.stringify({"password": password})
@@ -101,7 +102,7 @@ export const editPassword = async (token, password) => {
 
 export const deleteAccount = async (token) => {
     try {
-        const response = await fetch(`${process.env.REACT_APP_BASE_URL}delete`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}user/delete`, {
             method: "DELETE",
             headers: {"Content-Type": "application/json", "Authorization":`Bearer ${token}`}
         });
@@ -114,7 +115,7 @@ export const deleteAccount = async (token) => {
 
 export const findUser = async (cookie) => {
     try {
-        const response = await fetch(`${process.env.REACT_APP_BASE_URL}findUser`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}user/findUser`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
