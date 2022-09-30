@@ -253,7 +253,7 @@ function Home({ user, fruits, token, setUser, setToken, toggle, setToggle, regis
                                                 </p>)
                                             })}
                                         </div>
-                                        <button id="addToBasket" onClick={sendCheckOut}>+🛒</button>
+                                        <button id="addToBasket" onClick={sendCheckOut} sx={{bg: 'primaryAddToBasket' }}>+🛒</button>
                                     </div>
                                 ) : (
                                     <div className="selectedCSS">

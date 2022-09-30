@@ -19,6 +19,8 @@ const theme = {
     primaryPrice: '#2b0333',
     secondaryPrice: '#2b0333',
     containerHeader: '#330931',
+    primaryAddToBasket: '#2f0663',
+   
     modes: {
       dark: {
         background:'#4cc9f0',
@@ -34,7 +36,9 @@ const theme = {
         secondarySplash: 'white',
         primaryPrice: 'green',
         secondaryPrice: '#ff1654',
-        containerHeader: '#ff1654'
+        containerHeader: '#ff1654',
+        primaryAddToBasket: '#68c4eb',
+        
       },
     },
   },
