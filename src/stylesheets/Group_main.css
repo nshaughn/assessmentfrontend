@@ -360,7 +360,7 @@ p {
     align-self: center;
     border: rgba(155, 134, 134, 0);
     border-radius: 50px 50px 0px 0px;
-    background-image: linear-gradient(to bottom left, #3d033a, #3d033a);
+    /* background-image: linear-gradient(to bottom left, #3d033a, #3d033a); */
 }
 
 #addToBasket:hover {
